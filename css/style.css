@@ -1,0 +1,156 @@
+/* Body styles */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    text-align: justify;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Proza Libre', sans-serif;
+    color: #892f0e;
+}
+
+.main-content {
+    margin: 0%;
+    padding: 0%;
+    min-height: 100vh;
+    margin-bottom: -57px;
+}
+
+.main-content:after {
+    content: "";
+    display: block;
+    height: 57px;
+}
+
+
+/* Navbar */
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    color: #b4522e !important;
+    margin: auto 1rem;
+    font-weight: 600;
+}
+
+.nav-link:hover,.nav-link:focus,.nav-link:active {
+    color: #892f0e !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-collapse {
+    margin-left: 115px;
+}
+
+.nav-brand {
+    margin-left: 3%;
+}
+
+.nav-brand-img {
+    width: 190px;
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-item {
+        margin-top: 1%;
+    }
+
+    .nav-brand-img {
+        width: 150px;
+    }
+}
+
+
+
+/* Scroll to top arrow */
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #f3ac42;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+    background: #eda332;
+}
+
+#return-to-top:hover i {
+    color: #892f0e;
+    top: 5px;
+}
+
+
+/* Top content responsive */
+.top-con {
+    margin-top: 12%;
+}
+
+@media screen and (max-width: 1200px)
+{
+    .top-con {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 1200px)
+{
+    .top-con {
+        margin-top: 30%;
+    }
+}
+
+
+/* Top text content */
+.top-text-con {
+    margin-top: 3%;
+}
+
+
+/* Footer */
+footer {
+    height: 57px;
+    background-color: #92a3c5e8;
+}
