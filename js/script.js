@@ -13,14 +13,26 @@ $('#return-to-top').click(function() {
 });
 
 
+/* Contact form submission without refresh */
+$( "form" ).on( "submit", function(e) { 
+    // Form validation
+    if ($('#_honeyinput').val().length != 0)
+    {
+        return false;
+    } 
 
-/* Form submission without refresh */
-$.ajax({
-    url: "https://formsubmit.co/3877f8bbba51205a28d60d24e448b2d0",
-    method: "POST",
-    data: {
-        name: "FormSubmit",
-        message: "I'm from Devro LABS"
-    },
-    dataType: "json"
+    // Collect data
+    var dataString = $(this).serialize();     
+
+    // Send mail
+    $.ajax({
+        type: "POST",
+        url: "https://formsubmit.co/3877f8bbba51205a28d60d24e448b2d0",
+        data: dataString,
+        dataType: "json"
+    });
+
+    document.querySelector("#success-message").innerHTML = "Thanks for contacting me! <i class=\"fas fa-check-circle\"></i>";
+    document.querySelector("#success-message").style.marginLeft = "2%";
+    e.preventDefault();
 });

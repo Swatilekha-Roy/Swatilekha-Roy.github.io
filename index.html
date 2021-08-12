@@ -327,25 +327,32 @@
                             <form target="_blank">        
                                 <div class="form-group">
                                     <div class="form-row">
+                                        <!-- Form fields -->
                                         <div class="col">
                                             <label for="name">Full Name</label>
-                                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                            <input type="text" name="name" id="name-id" class="form-control" placeholder="Full Name" required>
                                         </div>
                                         <div class="col">
                                             <label for="email">Email Address</label>
-                                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                            <input type="email" name="email" id="email-id" class="form-control" placeholder="Email Address" required>
                                         </div>                    
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="message">I wanna tell you...</label>
-                                    <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                                    <textarea placeholder="Your Message" class="form-control" name="message" id="message-id" rows="8" required></textarea>
                                 </div>
+
+                                <!-- Captchas and route -->
                                 <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
                                 <input type="hidden" name="_captcha" value="false">
-                                <input type="text" name="_honey" style="display:none">
+                                <input type="text" name="_honey" id="_honeyinput" style="display: none;">
+
+                                <!-- Submit form -->
                                 <button type="submit" class="btn btn-lg btn-primary contact-btn btn-block">Submit Form</button>
+
+                                <div id="success-message"></div>
                             </form>
                         </div>
                     </div>
