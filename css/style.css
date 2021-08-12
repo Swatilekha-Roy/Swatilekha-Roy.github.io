@@ -2,7 +2,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -14,14 +14,21 @@ body {
     background-color: rgba(255, 255, 255, 0.719);
 }
 
-h1,h2,h3,h4,h5 {
+h1,h2 {
     font-family: 'Proza Libre', sans-serif;
-    color: #892f0e;
+    color: #708dc0;
+    font-weight: 500;
+}
+
+h3,h4,h5 {
+    font-family: 'Proza Libre', sans-serif;
+    color: #92abd6;
+    font-weight: 600;
 }
 
 h2 {
     text-align: center;
-    font-size: 2.6em;
+    font-size: 3em;
 }
 
 .main-content {
@@ -44,7 +51,7 @@ h2 {
 }
 
 .nav-link {
-    color: #b4522e !important;
+    color: #2ecc3b !important;
     margin: auto 1rem;
     font-weight: 800;
     font-family: 'Rubik', sans-serif;
@@ -158,8 +165,7 @@ h2 {
 
 /* Contact Form */
 input,textarea,.form-control {
-    margin-top: 1%;
-    background-color: #9eff0396 !important;
+    background-color: #acfc2c96 !important;
     border-radius: 25px;
     border-width: 1px;
     border-color: rgb(245, 158, 118) !important;
@@ -173,11 +179,11 @@ textarea {
 
 input:hover,textarea:hover,.form-control:hover {
     border-width: 2px;
-    background-color: #9eff03b4 !important;
+    background-color: #acfc2cb0 !important;
 }
 
 input:focus,textarea:focus.form-control:focus,input:active,textarea:active,.form-control:active {
-    background-color: #9eff03b4 !important;
+    background-color: #acfc2cb0 !important;
     box-shadow: rgba(245, 158, 118, 0.781) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -193,13 +199,20 @@ input[type=number]:focus,
 [type=email].form-control:focus, 
 [type=tel].form-control:focus, 
 [contenteditable].form-control:focus {
-    background-color: #9eff03b4 !important;
+    background-color: #acfc2cb0 !important;
     box-shadow: rgba(245, 158, 118, 0.781) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     outline: none !important;
 }
 
 textarea {
     resize: none;
+}
+
+label {
+    margin-top: 2%;
+    font-weight: 600;
+    margin-left: 1%;
+    color: rgba(57, 119, 155, 0.884);
 }
 
 .contact-btn {
