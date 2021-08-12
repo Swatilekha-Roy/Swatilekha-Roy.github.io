@@ -167,6 +167,12 @@ h2 {
 }
 
 
+/* Other text content */
+.other-con {
+    margin-top: 5%;
+}
+
+
 /* Contact Form */
 input,textarea,.form-control {
     background-color: #acfc2c96 !important;
