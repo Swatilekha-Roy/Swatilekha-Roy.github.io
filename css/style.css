@@ -350,7 +350,7 @@ footer {
     border-radius: 15px;
 }
 
-.btn-primary:hover,.btn-primary:active,.btn-primary:focus {
+.resume-btn:hover,.resume-btn:active,.resume-btn:focus {
     background-color: #708dc0;
 }
 
@@ -371,6 +371,10 @@ footer {
     fill: #f28bac;
 }
 
+.social-con {
+    text-decoration: none !important;
+}
+
 @media only screen and (max-width: 600px)
 {
     .social-svg {
@@ -378,8 +382,7 @@ footer {
     }
 
     .social-con {
-        margin-top: 7%;
-        
+        margin-top: 7%;        
     }
 }
 

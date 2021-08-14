@@ -14,7 +14,7 @@ $('#return-to-top').click(function() {
 
 
 /* Contact form submission without refresh */
-$( "form" ).on( "submit", function(e) { 
+$("form").on("submit", function(e) { 
     // Form validation
     if ($('#_honeyinput').val().length != 0)
     {
