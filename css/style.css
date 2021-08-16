@@ -32,6 +32,11 @@ h2 {
     font-size: 3em;
 }
 
+h3 {
+    text-align: center;
+    font-size: 2.5em !important;
+}
+
 .main-content {
     min-height: 100vh;
     margin-bottom: -57px;
@@ -197,13 +202,6 @@ input,textarea,.form-control {
     box-shadow: none;
 }
 
-@media only screen and (max-width: 600px)
-{
-    input,textarea,.form-control {
-        width: 290px;
-    }
-}
-
 textarea {
     border-radius: 35px !important;
     padding: 15px !important;
@@ -254,10 +252,58 @@ label {
 
 @media only screen and (max-width: 600px)
 {
+    input,textarea,.form-control {
+        width: 290px;
+    }
+}
+
+@media only screen and (max-width: 768px)
+{
+    .contact-h {
+        margin-top: 7%;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
     #contact_form {
         margin-top: 9%;
     }
 }
+
+
+
+/* Summary Section */
+.social-svg {
+    fill: #fdca5d;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.social-svg:nth-child(0)
+{
+    margin-left: 0;
+}
+
+.social-svg:hover,.social-svg:active,.social-svg:focus {
+    fill: #f28bac;
+}
+
+.social-con {
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .social-svg {
+        margin-top: 6%;
+    }
+
+    .social-con {
+        margin-top: 7%;        
+    }
+}
+
 
 
 /* Footer */
@@ -268,16 +314,10 @@ footer {
 }
 
 
+
 /* Homepage */
 .homepage-img {
     width: 400px;
-}
-
-@media only screen and (max-width: 1200px)
-{
-    .homepage-img {
-        width: 300px;
-    }
 }
 
 .skill-tag {
@@ -354,35 +394,62 @@ footer {
     background-color: #708dc0;
 }
 
-
-/* Summary Section */
-.social-svg {
-    fill: #fdca5d;
-    margin-left: 3%;
-    margin-top: 3%;
-}
-
-.social-svg:nth-child(0)
+@media only screen and (max-width: 1200px)
 {
-    margin-left: 0;
-}
-
-.social-svg:hover,.social-svg:active,.social-svg:focus {
-    fill: #f28bac;
-}
-
-.social-con {
-    text-decoration: none !important;
-}
-
-@media only screen and (max-width: 600px)
-{
-    .social-svg {
-        margin-top: 6%;
+    .homepage-img {
+        width: 300px;
     }
+}
 
-    .social-con {
-        margin-top: 7%;        
+
+
+/* Projects Page */
+blockquote{
+    margin: 0 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    padding: 7px 20px;
+    font-style: italic;
+}
+
+blockquote:before {
+    content: open-quote;
+    line-height: 0;
+    font-weight: 400;
+    left: -10px;
+    position: relative;
+    top: 20px;
+    color: #f28bac;
+    font-size: 4em;
+}
+
+.project-img {
+    height: 300px;
+}
+
+.cstm-height-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.demo-btn {
+    border-radius: 5px !important;
+    float: left;
+}
+
+.code-btn {
+    border-radius: 5px !important;
+    float: right;
+    background-color: #ee739a !important;
+}
+
+.code-btn:hover,.code-btn:active,.code-btn:focus {
+    background-color: #fdca5d !important;
+}
+
+@media only screen and (max-width: 768px)
+{
+    .project-img {
+        height: 200px;
     }
 }
 

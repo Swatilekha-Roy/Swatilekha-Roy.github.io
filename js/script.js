@@ -32,7 +32,7 @@ $("form").on("submit", function(e) {
         dataType: "json"
     });
 
-    document.querySelector("#success-message").innerHTML = "Thanks for contacting me! <i class=\"fas fa-check-circle\"></i>";
+    document.querySelector("#success-message").innerHTML = "<i class=\"fas fa-check-circle\"></i> Thanks for contacting me!";
     document.querySelector("#success-message").style.marginLeft = "2%";
     e.preventDefault();
 });
