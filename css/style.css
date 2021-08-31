@@ -513,14 +513,27 @@ blockquote:before {
     margin-left: 2%;
 }
 
+.edu-card {
+    background-color: #CBFCBA;
+    padding: 2% 1%;
+    margin-top: 5%;
+    border-radius: 7px;
+}
+
+.edu-card-img {
+    max-width: 250px;
+    border: 2px dotted #000;    
+}
+
 @media only screen and (max-width: 768px)
 {
     .edu-img {
         width: 310px;
         margin: auto !important;
-        align-items: center;
-        justify-content: center;
-        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        display: flex !important;
+        float: none !important;
     }
 }
 
