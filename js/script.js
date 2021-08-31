@@ -36,3 +36,25 @@ $("form").on("submit", function(e) {
     document.querySelector("#success-message").style.marginLeft = "2%";
     e.preventDefault();
 });
+
+
+/* Certifications owl carousel */
+$('.owl-carousel').owlCarousel({
+  loop: false,
+  margin: 10,
+  dots: false,
+  nav: true,
+  navText: ["<div class='nav-btn prev-slide'><i class='fas fa-chevron-circle-left'></i></div>","<div class='nav-btn next-slide'><i class='fas fa-chevron-circle-right'></i></div>"],
+  stagePadding: 50,
+  responsive: {
+      0: {
+          items: 1
+      },
+      600: {
+          items: 3
+      },
+      1000: {
+          items: 5
+      }
+  }
+});

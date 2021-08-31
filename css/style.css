@@ -525,6 +525,119 @@ blockquote:before {
     border: 2px dotted #000;    
 }
 
+.owl-carousel {
+    width: 1280px;
+    margin: 50px auto;
+    min-height: 200px;
+    box-sizing: border-box;
+    position: relative;
+}
+    
+.owl-carousel {
+    overflow: hidden;
+    width: 195px;
+    flex-shrink: 0;
+    height: 322px;
+    padding-right: 15px;
+    
+}
+  
+.owl-carousel .info {
+    background-color: #566d94;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.owl-carousel .info {
+    overflow: auto;
+}
+
+.owl-carousel .info p {
+    color: #dfe4def5;
+    font-weight: 700;
+}
+  
+.owl-carousel .info a {
+    color: #dfe4def5;
+    text-decoration: none;
+    font-weight: 500;
+}
+  
+.owl-carousel .info a:visited,.owl-carousel .info a:hover,.owl-carousel .info a:active,.owl-carousel .info a:focus {
+    color: #25ff00;
+    font-weight: 900;
+}
+  
+.owl-carousel {
+    width: 100%;
+    height: 100%;  
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+  
+.sc-home-img {
+    width: 100%;
+    height: 100%;  
+    border: 2px solid #fff;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.owl-carousel .item {
+    border-color: #000000;
+    border-width: 2px;
+    padding-left: 18px;
+}
+  
+.carousel-wrap h3 {
+    font-size: 2rem;
+    color: #132743;
+    padding-top: 5%;
+    font-weight: 900;
+    padding-left: 5.5%;
+}
+   
+.nav-btn {
+    font-size: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    pointer-events: none;
+    color: #29df54;
+    margin-top: 30% !important;
+    padding-top: 80px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    transform: translateY(-50%);
+}
+  
+.nav-btn .prev-slide {
+    text-decoration: none;
+}
+  
+.nav-btn:active, .nav-btn:hover, .nav-btn:focus {
+    text-decoration: none;
+    color: #1fb943;
+    font-weight: 900;
+    border: none;
+    border-color: #ffffff;
+    background-color: #ffffff;
+}
+  
+.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
+    cursor: pointer;
+    background: #ffffff;
+}
+ 
+@media screen and (max-width: 1024px) {
+    .owl-carousel {
+      width: 85%;
+    }
+}
+  
 @media only screen and (max-width: 768px)
 {
     .edu-img {
@@ -553,7 +666,12 @@ blockquote:before {
     .top-head {
         margin-top: 10% !important;
     }
+
+    .owl-carousel {
+        width: 80%;
+    }
 }
+
 
 
 /* Prevent horizontal scroll */
