@@ -535,6 +535,24 @@ blockquote:before {
         display: flex !important;
         float: none !important;
     }
+
+    .edu-card-img {
+        align-items: center !important;
+        margin: auto !important;
+        justify-content: center !important;
+        display: flex !important;
+        float: none !important;
+        margin-bottom: 8% !important;
+    }
+
+    .edu-card {
+        padding: 5%;
+        margin: 7% 3% !important;
+    }
+
+    .top-head {
+        margin-top: 10% !important;
+    }
 }
 
 
