@@ -516,7 +516,7 @@ blockquote:before {
 .edu-card {
     background-color: #CBFCBA;
     padding: 2% 1%;
-    margin-top: 5%;
+    margin-top: 3%;
     border-radius: 7px;
 }
 
@@ -669,6 +669,24 @@ blockquote:before {
 
     .owl-carousel {
         width: 80%;
+    }
+}
+
+
+
+/* Experience Page */
+.work-card {
+    background-color: #f9d8bd;
+    padding: 2% 1%;
+    margin-top: 3%;
+    border-radius: 7px;
+}
+
+@media only screen and (max-width: 768px)
+{
+    .work-card {
+        padding: 5%;
+        margin: 7% 3% !important;
     }
 }
 
