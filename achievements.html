@@ -1,177 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    
-        <!-- FA CSS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
-    
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-        
-        <!-- font-awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/style.css">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- WOW CSS -->
-        <link rel="stylesheet" href="css/animate.css">
-            
-        <!-- Title of Page -->
-        <title>Swatilekha Roy</title>
-    </head>
-    
-    <body>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: rgba(255, 255, 255, 0.904) !important;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img class="nav-brand-img" src="img/logo.png" alt="logo image">
-                </a> 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav" >
-                    <ul class="navbar-nav nav-fill w-100">
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-active" href="index.html">HOME</a>
-                        </li>
+    <!-- FA CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
+      rel="stylesheet"
+    />
 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="projects.html">PROJECTS</a>
-                        </li> 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="education.html">EDUCATION</a>
-                        </li>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="experience.html">EXPERIENCE</a>
-                        </li> 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="blog.html">BLOG</a>
-                        </li> 
+    <!-- WOW CSS -->
+    <link rel="stylesheet" href="css/animate.css" />
 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">ACHIEVEMENTS</a>
-                        </li>
+    <!-- Title of Page -->
+    <title>Swatilekha Roy</title>
+  </head>
 
-                        <!-- <li class="nav-item">
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-md navbar-light fixed-top"
+      style="background-color: rgba(255, 255, 255, 0.904) !important"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img class="nav-brand-img" src="img/logo.png" alt="logo image" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav nav-fill w-100">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">HOME</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="projects.html"
+                >PROJECTS</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="education.html"
+                >EDUCATION</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="experience.html"
+                >EXPERIENCE</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="blog.html">BLOG</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link nav-link-active" aria-current="page" href="#"
+                >ACHIEVEMENTS</a
+              >
+            </li>
+
+            <!-- <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#blog">FANGIRL</a>
                         </li>  -->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Bottom Introductory section -->
-            <div class="container other-con">
-                <div class="row">
-                    <!-- Social Media Handles -->
-                    <div class="col-12 col-md-5 col-lg-6">
-                        <img src="img/portrait.png" class="justify-content-center wow fadeInLeft" alt="Portrait image" height="340" style="margin-left: 11%;" />
-                        <br>
-                        <a href="https://www.linkedin.com/in/swatilekharoy" class="social-con wow fadeInLeft">
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="color: aliceblue;"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
-                        </a>
-                        <a href="https://github.com/Swatilekha-Roy" class="social-con wow fadeInLeft">
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2.218 18.616c-.354.069-.468-.149-.468-.336v-1.921c0-.653-.229-1.079-.481-1.296 1.56-.173 3.198-.765 3.198-3.454 0-.765-.273-1.389-.721-1.879.072-.177.312-.889-.069-1.853 0 0-.587-.188-1.923.717-.561-.154-1.159-.231-1.754-.234-.595.003-1.193.08-1.753.235-1.337-.905-1.925-.717-1.925-.717-.379.964-.14 1.676-.067 1.852-.448.49-.722 1.114-.722 1.879 0 2.682 1.634 3.282 3.189 3.459-.2.175-.381.483-.444.936-.4.179-1.413.488-2.037-.582 0 0-.37-.672-1.073-.722 0 0-.683-.009-.048.426 0 0 .46.215.777 1.024 0 0 .405 1.25 2.353.826v1.303c0 .185-.113.402-.462.337-2.782-.925-4.788-3.549-4.788-6.641 0-3.867 3.135-7 7-7s7 3.133 7 7c0 3.091-2.003 5.715-4.782 6.641z"/></svg>
-                        </a>
-                        <a href="https://blogsigh.wordpress.com" class="social-con wow fadeInLeft">
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M12 5.321c-3.683 0-6.679 2.997-6.679 6.679 0 3.683 2.996 6.68 6.679 6.68s6.679-2.997 6.679-6.68-2.996-6.679-6.679-6.679zm-6.005 6.679c0-.87.188-1.697.52-2.444l2.865 7.849c-2.004-.974-3.385-3.028-3.385-5.405zm6.005 6.005c-.59 0-1.158-.086-1.696-.244l1.802-5.236c.033.09 1.839 5.059 1.889 5.14-.624.219-1.296.34-1.995.34zm.828-8.82c.361-.02.687-.058.687-.058.324-.038.286-.514-.038-.495-1.274.1-1.892.1-3.182 0-.323-.019-.362.476-.038.495 0 0 .306.038.63.058l.936 2.563-1.314 3.941-2.189-6.504c.362-.02.688-.058.688-.058.323-.038.285-.514-.038-.495-1.118.088-1.622.081-1.988.069 1.075-1.63 2.92-2.706 5.018-2.706 1.563 0 2.987.597 4.056 1.577-.651-.036-1.087.49-1.087 1.061 0 .495.286.914.59 1.409.229.4.495.914.495 1.656 0 .513-.197 1.11-.456 1.941l-.6 2.001-2.17-6.455zm4.442-.066c.469.855.736 1.837.736 2.88 0 2.216-1.202 4.15-2.987 5.191l1.835-5.303c.358-.897.546-1.805.416-2.768zm-5.27-9.119c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 19c-3.859 0-7-3.14-7-7s3.141-7 7-7 7 3.14 7 7-3.141 7-7 7z"/></svg>
-                        </a>
-                        <a href="https://devpost.com/swatilekha-roy4" class="social-con wow fadeInLeft">
-                            <svg class="social-svg" width="35" height="35"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve"><g><g><path class="st0" d="M48.7,4.8H15.3L0,32l15.7,27.2h33.1L64,32L48.7,4.8z"/></g><path class="st1" d="M32.2,16.9H21.4v30.3h10.8c8.2,0,14.9-6.8,14.9-15.1S40.5,16.9,32.2,16.9z M32,41.1h-4.5V22.9H32c5,0,9.1,4.1,9.1,9.1S37,41.1,32,41.1z"/><style type="text/css">.st1{fill:#FFFFFF;}</style></g></svg>
-                        </a>
-                        <a href="https://www.instagram.com/oh_laugh_hugs" class="social-con wow fadeInRight">
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"/></svg>
-                        </a>
-                        <a href="https://www.facebook.com/swatilekha.roy4" class="social-con wow fadeInRight">
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
-                        </a>   
-                        <a href="https://twitter.com/SwatilekhaRoy2" class="social-con wow fadeInRight">
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
-                        </a>
-                                             
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="col-12 col-md-7 col-lg-6 wow fadeInRight">
-                        <h3 class="contact-h">Get in Touch!</h3>
-                        <form target="_blank">        
-                            <div class="form-group">
-                                <div class="form-row">
-                                    <!-- Form fields -->
-                                    <div class="col">
-                                        <label for="name-id">Full Name</label>
-                                        <input type="text" name="name" id="name-id" class="form-control" placeholder="Anna Oldenburg" required>
-                                    </div>
-                                    <div class="col">
-                                        <label for="email-id">Email Address</label>
-                                        <input type="email" name="email" id="email-id" class="form-control" placeholder="annaofarendelle@ice.in" required>
-                                    </div>                    
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message-id">I wanna tell you...</label>
-                                <textarea placeholder="It's getting too cold here but I feel awkward to tell my sister...I need some advice from you." class="form-control" name="message" id="message-id" rows="8" required></textarea>
-                            </div>
-
-                            <!-- Captchas and route -->
-                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="text" name="_honey" id="_honeyinput" style="display: none;">
-
-                            <!-- Submit form -->
-                            <button type="submit" class="btn btn-lg btn-primary contact-btn btn-block">Submit Form</button>
-
-                            <div id="success-message"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+          </ul>
         </div>
-        
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <span style="margin-top: 1%; color: #fff; font-weight: 700;">Made with <i class="fas fa-heart"></i> by Swatilekha Roy</span>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Achievements Introduction -->
+      <div class="container top-con">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <h3>ACHIEVEMENTS</h3>
+            <p>
+              I always strive to see the best in people, their most creative and
+              vulnerable sides and try to urge them to mine all their hidden
+              potential which is simply waiting to be unlocked. That and that
+              alone, can help me achieve milestones in my own journey while
+              doing my best to make a difference in the world.
+              <br /><br />
+              On some days, I sit down and stare at the sky and remember all the
+              lovely faces that have helped me get where am today and where I am
+              going to be tomorrow.
+            </p>
+            <blockquote>
+              All our dreams can come true if we have the courage to pursue
+              them.
+            </blockquote>
+            <span style="float: right"><strong>- Walt Disney</strong></span>
+          </div>
+          <div class="col-12 col-md-3" style="float: right">
+            <img
+              src="img/achievements.png"
+              class="achievement-img wow fadeInRight"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical achievements -->
+      <div class="container top-head" style="margin-top: 5%">
+        <h4>Accomplishments in Technology</h4>
+        <div class="row">
+          <div class="col-12 wow fadeInLeft">
+            <ul id="achievement-ul">
+              <li>
+                'Audience Choice Award' for Project LearnLily, Qoom -
+                <em>Aug, 2021</em>
+              </li>
+              <li>Second Place Winner, Tech4U Hacks - <em>Aug, 2021</em></li>
+              <li>
+                Mentee, “Future Looks Like You” Mentorship Accelerator in Canvas
+                - <em>Jul, 2021</em>
+              </li>
+              <li>vGHC '21 Scholar, AnitaB.org - <em>Jul, 2021</em></li>
+              <li>
+                'Best Use of Qoom Challenge' Winner, sponsored by Qoom, RU Hacks
+                2021: Digital - <em>May, 2021</em>
+              </li>
+              <li>
+                'Best Use of Azure for Social Good Sponsored by Microsoft'
+                Winner, Athena Hacks 2021 - <em>Mar, 2021</em>
+              </li>
+              <li>Top Contributor, JGEC Winter of Code - <em>Feb, 2021</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Literary achievements -->
+      <div class="container" style="margin-top: 5%">
+        <h4>Literary Laurels</h4>
+        <div class="row">
+          <div class="col-12 wow fadeInRight">
+            <ul id="achievement-ul">
+              <li>
+                Featured Writer, Wordweavers Drabble Contest -
+                <em>Aug, 2021</em>
+              </li>
+              <li>
+                Winner, JGEC Pandulipi Inter College Writing Contest (twice) -
+                <em>Dec, 2020 and Jan, 2021</em>
+              </li>
+              <li>
+                Top 13, Chin Up Queens Contest, Unseen & Beyond - <em>2020</em>
+              </li>
+              <li>
+                Winner, On Slam Poetry Contest in Esperanza 2019 -
+                <em>Mar, 2019</em>
+              </li>
+              <li>
+                Jury's Choice Winner, in Cine Books Photo Story Contest, Cine
+                Books, in collaboration with Sweek - <em>Dec 2018</em>
+              </li>
+              <li>
+                Sweek Pride Popular Badge, in Sweek Pride Contest, Sweek -
+                <em>Jul, 2018</em>
+              </li>
+              <li>
+                Winner in 'Eloquence Story Contest', Sweek - <em>Jun, 2018</em>
+              </li>
+              <li>
+                Winner in 'Wordweavers Drabble Contest' and 'Wordweavers Prose
+                300 Contest', Wordweavers - <em>Jun, 2018</em>
+              </li>
+              <li>
+                Finalist in two different categories for 'Sweek Stars' 2017
+                Contest, Sweek - <em>Jan, 2018</em>
+              </li>
+              <li>
+                The Best Feedback in 'Micro Heart Contest', Sweek -
+                <em>Jan, 2018</em>
+              </li>
+              <li>Finalist in 'Her Story Contest', Sweek - <em>2018</em></li>
+              <li>
+                Long listed, in I Must Be Off Annual Travel Story Writing
+                Contest - <em>2018</em>
+              </li>
+              <li>Winner, The Golden Bird Awards, Wattpad - <em>2018</em></li>
+              <li>
+                Featured in 'Holiday Reading List', Sweek - <em>Dec, 2017</em>
+              </li>
+              <li>
+                Honorable Mention in international 'In Focus Contest', World in
+                Focus - <em>2017</em>
+              </li>
+              <li>
+                Special Halloween Badge in 'Scare Me' Contest, Sweek -
+                <em>2017</em>
+              </li>
+              <li>
+                Literary Performer of the Year, DAV Model School - <em>2016</em>
+              </li>
+              <li>
+                Notable Finalist in 'Writing For Peace' Contest, Writing For
+                Peace - <em>2016</em>
+              </li>
+              <li>
+                Outstanding Entrant, Young Writer of the Year Contest, Campfire,
+                in collaboration with Hachette India and Spell Bee -
+                <em>2012</em>
+              </li>
+              <li>
+                Editor's Choice Awards for five of my works- 'War in the Head',
+                'If I Were Mayor', 'The Bookshelf', 'Walls Listen' and 'Riding a
+                Shikara', Teen Ink - <em>2017</em>
+              </li>
+              <li>
+                Shortlisted, several Flash Fiction Contests- namely #MicroDream,
+                #MicroLight, #MicroLetter and #MicroBlue, Sweek - <em>2017</em>
+              </li>
+              <li>
+                Third Winner in 'Wordweavers Poetry Contest' twice, Wordweavers
+                - <em>2017, 2018</em>
+              </li>
+              <li>
+                Winner of two different 'Contest Times', The Bookaholics -
+                <em>2017</em>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- All other achievements -->
+      <div class="container" style="margin-top: 5%">
+        <h4>Other Achievements</h4>
+        <div class="row">
+          <div class="col-12 wow fadeInLeft">
+            <ul id="achievement-ul">
+              <li>
+                Letters recited on 'Pratyahiki' twice, All India Radio |
+                Aakashvani - <em>2018</em>
+              </li>
+              <li>
+                State Second Winner, International Olympiad Rank 16 in IOEL,
+                Silverzone - <em>Dec 1, 2016</em>
+              </li>
+              <li>
+                School Winner, Navneet Youva Master Stroke Contest, Navneet -
+                <em>2014</em>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Introductory section -->
+      <div class="container other-con">
+        <div class="row">
+          <!-- Social Media Handles -->
+          <div class="col-12 col-md-5 col-lg-6">
+            <img
+              src="img/portrait.png"
+              class="justify-content-center wow fadeInLeft"
+              alt="Portrait image"
+              height="340"
+              style="margin-left: 11%"
+            />
+            <br />
+            <a
+              href="https://www.linkedin.com/in/swatilekharoy"
+              class="social-con wow fadeInLeft"
+            >
+              <svg
+                class="social-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                style="color: aliceblue"
+              >
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/Swatilekha-Roy"
+              class="social-con wow fadeInLeft"
+            >
+              <svg
+                class="social-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2.218 18.616c-.354.069-.468-.149-.468-.336v-1.921c0-.653-.229-1.079-.481-1.296 1.56-.173 3.198-.765 3.198-3.454 0-.765-.273-1.389-.721-1.879.072-.177.312-.889-.069-1.853 0 0-.587-.188-1.923.717-.561-.154-1.159-.231-1.754-.234-.595.003-1.193.08-1.753.235-1.337-.905-1.925-.717-1.925-.717-.379.964-.14 1.676-.067 1.852-.448.49-.722 1.114-.722 1.879 0 2.682 1.634 3.282 3.189 3.459-.2.175-.381.483-.444.936-.4.179-1.413.488-2.037-.582 0 0-.37-.672-1.073-.722 0 0-.683-.009-.048.426 0 0 .46.215.777 1.024 0 0 .405 1.25 2.353.826v1.303c0 .185-.113.402-.462.337-2.782-.925-4.788-3.549-4.788-6.641 0-3.867 3.135-7 7-7s7 3.133 7 7c0 3.091-2.003 5.715-4.782 6.641z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://blogsigh.wordpress.com"
+              class="social-con wow fadeInLeft"
+            >
+              <svg
+                class="social-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 5.321c-3.683 0-6.679 2.997-6.679 6.679 0 3.683 2.996 6.68 6.679 6.68s6.679-2.997 6.679-6.68-2.996-6.679-6.679-6.679zm-6.005 6.679c0-.87.188-1.697.52-2.444l2.865 7.849c-2.004-.974-3.385-3.028-3.385-5.405zm6.005 6.005c-.59 0-1.158-.086-1.696-.244l1.802-5.236c.033.09 1.839 5.059 1.889 5.14-.624.219-1.296.34-1.995.34zm.828-8.82c.361-.02.687-.058.687-.058.324-.038.286-.514-.038-.495-1.274.1-1.892.1-3.182 0-.323-.019-.362.476-.038.495 0 0 .306.038.63.058l.936 2.563-1.314 3.941-2.189-6.504c.362-.02.688-.058.688-.058.323-.038.285-.514-.038-.495-1.118.088-1.622.081-1.988.069 1.075-1.63 2.92-2.706 5.018-2.706 1.563 0 2.987.597 4.056 1.577-.651-.036-1.087.49-1.087 1.061 0 .495.286.914.59 1.409.229.4.495.914.495 1.656 0 .513-.197 1.11-.456 1.941l-.6 2.001-2.17-6.455zm4.442-.066c.469.855.736 1.837.736 2.88 0 2.216-1.202 4.15-2.987 5.191l1.835-5.303c.358-.897.546-1.805.416-2.768zm-5.27-9.119c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 19c-3.859 0-7-3.14-7-7s3.141-7 7-7 7 3.14 7 7-3.141 7-7 7z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://devpost.com/swatilekha-roy4"
+              class="social-con wow fadeInLeft"
+            >
+              <svg
+                class="social-svg"
+                width="35"
+                height="35"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 64 64"
+                style="enable-background: new 0 0 64 64"
+                xml:space="preserve"
+              >
+                <g>
+                  <g>
+                    <path
+                      class="st0"
+                      d="M48.7,4.8H15.3L0,32l15.7,27.2h33.1L64,32L48.7,4.8z"
+                    />
+                  </g>
+                  <path
+                    class="st1"
+                    d="M32.2,16.9H21.4v30.3h10.8c8.2,0,14.9-6.8,14.9-15.1S40.5,16.9,32.2,16.9z M32,41.1h-4.5V22.9H32c5,0,9.1,4.1,9.1,9.1S37,41.1,32,41.1z"
+                  />
+                  <style type="text/css">
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                  </style>
+                </g>
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/oh_laugh_hugs"
+              class="social-con wow fadeInRight"
+            >
+              <svg
+                class="social-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/swatilekha.roy4"
+              class="social-con wow fadeInRight"
+            >
+              <svg
+                class="social-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://twitter.com/SwatilekhaRoy2"
+              class="social-con wow fadeInRight"
+            >
+              <svg
+                class="social-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-12 col-md-7 col-lg-6 wow fadeInRight">
+            <h3 class="contact-h">Get in Touch!</h3>
+            <form target="_blank">
+              <div class="form-group">
+                <div class="form-row">
+                  <!-- Form fields -->
+                  <div class="col">
+                    <label for="name-id">Full Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-id"
+                      class="form-control"
+                      placeholder="Anna Oldenburg"
+                      required
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="email-id">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email-id"
+                      class="form-control"
+                      placeholder="annaofarendelle@ice.in"
+                      required
+                    />
+                  </div>
                 </div>
-            </div>
-        </footer>
+              </div>
 
-        <!-- Scroll to top arrow -->
-        <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up" aria-hidden="true" style="font-size: 30px;"></i></a>
+              <div class="form-group">
+                <label for="message-id">I wanna tell you...</label>
+                <textarea
+                  placeholder="It's getting too cold here but I feel awkward to tell my sister...I need some advice from you."
+                  class="form-control"
+                  name="message"
+                  id="message-id"
+                  rows="8"
+                  required
+                ></textarea>
+              </div>
 
-        <!-- JQuery JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
-  
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-        
-        <!-- Custom scripts -->    
-        <script src="js/script.js"></script>
+              <!-- Captchas and route -->
+              <input
+                type="hidden"
+                name="_next"
+                value="http://127.0.0.1:5500/index.html"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="text"
+                name="_honey"
+                id="_honeyinput"
+                style="display: none"
+              />
 
-        <!-- WOW animations -->
-        <script src="js/wow.min.js"></script>
+              <!-- Submit form -->
+              <button
+                type="submit"
+                class="btn btn-lg btn-primary contact-btn btn-block"
+              >
+                Submit Form
+              </button>
 
-        <script type="text/javascript">
-            new WOW().init();
-        </script>
+              <div id="success-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </body>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <span style="margin-top: 1%; color: #fff; font-weight: 700"
+            >Made with <i class="fas fa-heart"></i> by Swatilekha Roy</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top arrow -->
+    <a href="javascript:" id="return-to-top"
+      ><i class="fa fa-angle-up" aria-hidden="true" style="font-size: 30px"></i
+    ></a>
+
+    <!-- JQuery JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+      integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+      integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom scripts -->
+    <script src="js/script.js"></script>
+
+    <!-- WOW animations -->
+    <script src="js/wow.min.js"></script>
+
+    <script type="text/javascript">
+      new WOW().init();
+    </script>
+  </body>
 </html>

@@ -76,7 +76,7 @@ h3 {
     font-weight: 400;
 }
 
-.nav-link:hover,.nav-link:focus,.nav-link:active {
+.nav-link:hover,.nav-link:focus,.nav-link:active,.nav-link-active {
     color: #22b42f !important;
 }
 
@@ -687,6 +687,31 @@ blockquote:before {
     .work-card {
         padding: 5%;
         margin: 7% 3% !important;
+    }
+}
+
+
+/* Achievements Page */
+.achievement-img {
+    width: 280px;
+}
+
+#achievement-ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+#achievement-ul li {
+    max-width: 480px;
+}
+
+@media only screen and (max-width: 768px)
+{
+    #achievement-ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
     }
 }
 
