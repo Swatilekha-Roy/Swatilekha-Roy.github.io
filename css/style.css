@@ -706,6 +706,21 @@ blockquote:before {
     max-width: 480px;
 }
 
+.publication-ul li {
+    display: inline;    
+}
+
+.publication-ul li::before {
+    content: "♥";
+    margin-right: 20px;
+    color: #f28bac;
+    font-size: 22px;
+}
+
+.publication-ul a {
+    margin-left: 15px;
+}
+
 @media only screen and (max-width: 768px)
 {
     #achievement-ul {
