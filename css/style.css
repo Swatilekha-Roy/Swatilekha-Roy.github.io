@@ -192,6 +192,22 @@ h3 {
     margin-top: 8%;
 }
 
+.mail-link {
+    color: #ee739a;
+    padding-top: 5%;
+    display: flex;
+    margin: auto;
+}
+
+.fa-envelope-o {
+    font-size: 30px;
+    margin-left: 2%;
+}
+
+.mail-link:hover,.mail-link:active,.mail-link:focus {
+    color: #fdca5d;
+}
+
 
 /* Contact Form */
 input,textarea,.form-control {
