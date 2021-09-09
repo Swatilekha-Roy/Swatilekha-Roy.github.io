@@ -720,6 +720,15 @@ blockquote:before {
 
 #achievement-ul li {
     max-width: 480px;
+    list-style-type: none !important;
+}
+
+#achievement-ul li::before {
+    font-family: FontAwesome;
+    content: "\f184";
+    margin-right: 8px;
+    color: #fdca5d !important;
+    font-size: 18px;
 }
 
 .publication-ul li {
@@ -727,10 +736,11 @@ blockquote:before {
 }
 
 .publication-ul li::before {
-    content: "\2661";
-    margin-right: 20px;
+    font-family: FontAwesome;
+    content: "\f184";
+    margin-right: 14px;
     color: #f28bac !important;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .publication-ul a {
