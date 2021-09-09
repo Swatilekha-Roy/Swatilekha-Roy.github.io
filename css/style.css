@@ -731,8 +731,21 @@ blockquote:before {
     font-size: 18px;
 }
 
+.interview-ul li {
+    list-style-type: none !important;
+}
+
+.interview-ul li::before {
+    font-family: FontAwesome;
+    content: "\f184";
+    margin-right: 8px;
+    color: #57f364db !important;
+    font-size: 18px;
+}
+
 .publication-ul li {
-    display: inline;    
+    display: inline;  
+    list-style-type: none !important;
 }
 
 .publication-ul li::before {
@@ -754,6 +767,29 @@ blockquote:before {
         -moz-column-count: 1;
         column-count: 1;
     }
+}
+
+
+/* Blog Page */
+.blog-btn {
+    background-color: #2453aa !important;
+}
+
+.blog-btn:hover,.blog-btn:focus,.blog-btn:active {
+    background-color: #113880 !important;
+}
+
+.blog-card {
+    background-color: #f5b939;
+}
+
+.blog-card h5 {
+    color: #2961c9;
+}
+
+.fa-calendar {
+    margin-right: 2%;
+    font-size: 21px;
 }
 
 
