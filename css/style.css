@@ -712,18 +712,18 @@ blockquote:before {
     width: 280px;
 }
 
-#achievement-ul {
+.achievement-ul {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
 }
 
-#achievement-ul li {
+.achievement-ul li {
     max-width: 480px;
     list-style-type: none !important;
 }
 
-#achievement-ul li::before {
+.achievement-ul li::before {
     font-family: FontAwesome;
     content: "\f184";
     margin-right: 8px;
@@ -762,7 +762,7 @@ blockquote:before {
 
 @media only screen and (max-width: 768px)
 {
-    #achievement-ul {
+    .achievement-ul {
         -webkit-column-count: 1;
         -moz-column-count: 1;
         column-count: 1;
