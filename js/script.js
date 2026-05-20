@@ -32,7 +32,9 @@ window.addEventListener("load", function () {
 
 /* Contact Form Handling */
 // Handle contact form submission without refreshing the page
-$("form").on("submit", function (e) {
+$("#contact-form").on("submit", function (e) {
+  e.preventDefault();
+
   // Spam/honeypot protection: block submissions if the honeypot field has a value
   if ($("#_anna").val().length != 0) {
     console.warn(
@@ -42,8 +44,6 @@ $("form").on("submit", function (e) {
     return false;
   }
 
-  e.preventDefault();
-
   const $form = $(this);
   const $submitBtn = $form.find('button[type="submit"]');
   const $successMsg = $("#success-message");
@@ -51,19 +51,23 @@ $("form").on("submit", function (e) {
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  // Use FormData and no-cors mode to handle redirects gracefully without a page reload.
-  // Sending as FormData ensures the server sees the fields correctly to trigger emails.
+  // Sending data with the 'Accept' header tells FormSubmit to return JSON instead of a 302 redirect.
   fetch("https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/", {
     method: "POST",
     body: new FormData(this),
-    mode: "no-cors",
+    headers: {
+      Accept: "application/json",
+    },
   })
-    .then(() => {
-      // In no-cors mode, the promise resolves if the request was sent. 
-      // Since the network tab shows a 302 redirect, we know the submission succeeded.
+    .then((response) => {
+      if (response.ok) {
         $successMsg
           .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
           .css({ "margin-left": "2%", color: "inherit" });
+        $form[0].reset();
+      } else {
+        throw new Error("Submission failed with status: " + response.status);
+      }
     })
     .catch((error) => {
       console.error("Submission Error:", error);
