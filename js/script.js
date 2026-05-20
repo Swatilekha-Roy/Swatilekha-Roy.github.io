@@ -117,49 +117,56 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-/* Load work experiences from JSON and render into #work-experience container */
+/* Load work experiences from JSON and render into experience containers */
 async function loadExperience() {
   try {
     const resp = await fetch("data/experience.json");
     if (!resp.ok) return maybeHidePreloader();
     const json = await resp.json();
-    const experiences = json.experiences || [];
-    const container = document.getElementById("work-experience");
-    if (!container) return maybeHidePreloader();
+    const experiences = json.experience_work || [];
+    const leaderships = json.experience_leadership || [];
+    const workContainer = document.getElementById("work-experience");
+    const leadershipContainer = document.getElementById("leadership-experience");
+    if (!workContainer || !leadershipContainer) return maybeHidePreloader();
 
-    container.innerHTML = "";
+    workContainer.innerHTML = "";
+    leadershipContainer.innerHTML = "";
 
-    experiences.forEach((item) => {
-      const experienceItem = document.createElement("div");
-      experienceItem.className =
-        "col-12 col-md-6 experience-section wow fadeIn";
-
-      const title = document.createElement("h4");
-      title.textContent = item.title || "";
-      experienceItem.appendChild(title);
-
-      if (item.date) {
-        const dateElement = document.createElement("em");
-        dateElement.textContent = item.date;
-        experienceItem.appendChild(dateElement);
-      }
-
-      if (Array.isArray(item.description)) {
-        const p = document.createElement("p");
-        p.innerHTML = item.description.join("<br />");
-        experienceItem.appendChild(p);
-      } else if (typeof item.description === "string") {
-        const p = document.createElement("p");
-        p.innerHTML = item.description;
-        experienceItem.appendChild(p);
-      }
-
-      container.appendChild(experienceItem);
-    });
+    renderExperienceList(experiences, workContainer);
+    renderExperienceList(leaderships, leadershipContainer);
 
     maybeHidePreloader();
   } catch (err) {
     console.error("Error loading experience:", err);
     maybeHidePreloader();
   }
+}
+
+function renderExperienceList(items, container) {
+  items.forEach((item) => {
+    const experienceItem = document.createElement("div");
+    experienceItem.className = "col-12 col-md-6 experience-section wow fadeIn";
+
+    const title = document.createElement("h4");
+    title.textContent = item.title || "";
+    experienceItem.appendChild(title);
+
+    if (item.date) {
+      const dateElement = document.createElement("em");
+      dateElement.textContent = item.date;
+      experienceItem.appendChild(dateElement);
+    }
+
+    if (Array.isArray(item.description)) {
+      const p = document.createElement("p");
+      p.innerHTML = item.description.join("<br />");
+      experienceItem.appendChild(p);
+    } else if (typeof item.description === "string") {
+      const p = document.createElement("p");
+      p.innerHTML = item.description;
+      experienceItem.appendChild(p);
+    }
+
+    container.appendChild(experienceItem);
+  });
 }

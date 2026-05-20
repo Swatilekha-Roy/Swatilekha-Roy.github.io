@@ -1,5 +1,5 @@
 {
-  "experiences": [
+  "experience_work": [
     {
       "title": "Support Engineer Intern, Microsoft",
       "date": "Apr - Jul 2022",
@@ -25,6 +25,26 @@
             "‣ Wrote professional content across diverse domains, including college reviews, product launches, project summaries, blogs, ratings, and brand comparisons for a global client base, primarily in the United States.",
             "‣ Applied SEO, keyword strategy, and marketing techniques to optimize content performance and reach."
         ]
+    }
+  ],
+  "experience_leadership": [
+    {
+      "title": "'The Future is Me' Future Accelerator Mentee, Untapped",
+      "date": "Jul - Aug 2021",
+      "description": [
+        "‣ Selected as 1 of 21 participants for the global Mentorship Accelerator, and the only participant chosen from outside the United States.",
+        "‣ Learned directly from LinkedIn creators and industry professionals through focused sessions on career growth in tech.",
+        "‣ Participated in small-group coaching and built meaningful connections within a global tech community."
+      ]
+    },
+    {
+      "title": "Creator Group Cohort, Qoom",
+      "date": "Jun - Aug 2021",
+      "description": [
+        "‣ Secured a place in the Qoom Creator Group cohort by winning RU Hacks 2021.",
+        "‣ Built LearnLily, an all-in-one education platform for students and job seekers, in a team of two.",
+        "‣ Developed an ML-powered speech analysis feature for LearnLily, to detect speaking posture, fumbling, and use of external aids; won the Audience Choice Award at the end of the cohort."
+      ]
     }
   ]
 }
