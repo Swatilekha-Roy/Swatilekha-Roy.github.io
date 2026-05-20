@@ -52,7 +52,8 @@ $("#contact-form").on("submit", async function (e) {
   $submitBtn.prop("disabled", true).text("Sending...");
 
   const formData = new FormData(this);
-  formData.append("access_key", "5273e7fd-9067-4e85-a420-51ff86dd382d");
+  // Use .set() instead of .append() to avoid sending duplicate access_key values
+  formData.set("access_key", "5273e7fd-9067-4e85-a420-51ff86dd382d".trim());
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
