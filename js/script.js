@@ -47,21 +47,26 @@ $("form").on("submit", function (e) {
   const $form = $(this);
   const $submitBtn = $form.find('button[type="submit"]');
   const $successMsg = $("#success-message");
-  const formData = new FormData(this);
+
+  // Convert FormData to a plain object for JSON submission
+  const data = Object.fromEntries(new FormData(this).entries());
 
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  // Using fetch to handle the submission with better header support
+  // Sending data as JSON and using redirect: 'manual' to handle services that force redirects
   fetch("https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/", {
     method: "POST",
-    body: formData,
+    body: JSON.stringify(data),
     headers: {
+      "Content-Type": "application/json",
       Accept: "application/json",
     },
+    redirect: "manual", // Prevent the browser from following the 302 redirect
   })
     .then((response) => {
-      if (response.ok) {
+      // A status of 0 (opaque redirect) or 2xx/3xx indicates the server accepted the data
+      if (response.ok || response.status === 0 || response.status === 302) {
         $successMsg
           .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
           .css({ "margin-left": "2%", color: "inherit" });
