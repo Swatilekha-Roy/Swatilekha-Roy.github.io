@@ -47,16 +47,19 @@ $("form").on("submit", function (e) {
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  // Send the form data to formsubmit.co via AJAX
+  // Send the form data to formsubmit.cloud via AJAX
   $.ajax({
     type: "POST",
-    url: "https://formsubmit.cloud/ajax/afe4b316-a6d6-44ef-aad0-137a958f2e80/",
+    url: "https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/",
     data: $form.serialize(),
     dataType: "json",
+    headers: {
+      Accept: "application/json",
+    },
     success: function (data) {
       $successMsg
         .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
-        .css("margin-left", "2%");
+        .css({ "margin-left": "2%", color: "inherit" });
       $form[0].reset(); // Clear the form fields
       $submitBtn
         .prop("disabled", false)
