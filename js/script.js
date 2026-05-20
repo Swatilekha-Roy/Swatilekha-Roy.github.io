@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
 
 /* Contact Form Handling */
 // Handle contact form submission without refreshing the page
-$("#contact-form").on("submit", function (e) {
+$("#contact-form").on("submit", async function (e) {
   e.preventDefault();
 
   // Spam/honeypot protection: block submissions if the honeypot field has a value
@@ -51,37 +51,37 @@ $("#contact-form").on("submit", function (e) {
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  // Use the verified Form ID without the trailing slash to prevent 404s.
-  fetch("https://formsubmit.cloud/f/ae412012-a74c-45e8-a06d-f6f0d8fceb61", {
-    method: "POST",
-    body: new FormData(this),
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        $successMsg
-          .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
-          .css({ "margin-left": "2%", color: "inherit" });
-        $form[0].reset();
-      } else {
-        throw new Error("Form submission failed.");
-      }
-    })
-    .catch((error) => {
-      console.error("Submission Error:", error);
-      $successMsg
-        .html(
-          '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.',
-        )
-        .css("color", "red");
-    })
-    .finally(() => {
-      $submitBtn
-        .prop("disabled", false)
-        .html('Send <i class="fa-solid fa-paper-plane"></i>');
+  const formData = new FormData(this);
+  formData.append("access_key", "5273e7fd-9067-4e85-a420-51ff86dd382d");
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      $successMsg
+        .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
+        .css({ "margin-left": "2%", color: "inherit" });
+      $form[0].reset();
+    } else {
+      throw new Error(data.message || "Form submission failed.");
+    }
+  } catch (error) {
+    console.error("Submission Error:", error);
+    $successMsg
+      .html(
+        '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.',
+      )
+      .css("color", "red");
+  } finally {
+    $submitBtn
+      .prop("disabled", false)
+      .html('Send <i class="fa-solid fa-paper-plane"></i>');
+  }
 });
 
 /* Dynamic Content Loading and Navigation Highlighting */
