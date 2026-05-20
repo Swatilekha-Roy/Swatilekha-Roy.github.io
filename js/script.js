@@ -51,14 +51,20 @@ $("#contact-form").on("submit", async function (e) {
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  const formData = new FormData(this);
-  // Use .set() instead of .append() to avoid sending duplicate access_key values
-  formData.set("access_key", "5273e7fd-9067-4e85-a420-51ff86dd382d".trim());
+  // Convert FormData to a plain object and ensure access_key is a single string
+  const formData = Object.fromEntries(new FormData(this));
+  formData.access_key = "5273e7fd-9067-4e85-a420-51ff86dd382d".trim();
+
+  const json = JSON.stringify(formData);
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
     });
 
     const data = await response.json();
