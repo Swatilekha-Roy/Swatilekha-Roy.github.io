@@ -37,7 +37,9 @@ $("form").on("submit", function (e) {
 
   // Spam/honeypot protection: block submissions if the honeypot field has a value
   if ($("#_anna").val().length != 0) {
-    console.log("honeypot filled"); // Log before returning
+    console.warn(
+      "Honeypot field was filled, likely a bot. Blocking submission.",
+    );
     return false;
   }
 
@@ -51,9 +53,9 @@ $("form").on("submit", function (e) {
   // Send the form data to formsubmit.cloud via AJAX
   $.ajax({
     method: "POST",
-    url: "https://formsubmit.cloud/ajax/afe4b316-a6d6-44ef-aad0-137a958f2e80/", // Use the dedicated AJAX endpoint
+    url: "https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/", // Use the direct form action URL
     data: $form.serialize(),
-    // dataType: "json", // Removed to allow jQuery to infer data type or handle non-JSON responses more leniently
+    dataType: "json", // Explicitly expect JSON, as the Accept header should ensure it.
     headers: {
       Accept: "application/json",
     },
