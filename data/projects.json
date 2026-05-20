@@ -1,0 +1,48 @@
+{
+  "hackathonProjects": [
+    {
+      "title": "FemSTEM",
+      "description": "A web application that serves as an inclusive, supportive tech community focusing strictly on women and non-binaries. Join our Discord server here.",
+      "image": "https://dl.dropboxusercontent.com/s/g6fnf2go9bf8tej/femstem.png?dl=0",
+      "demo": "https://fem-stem.herokuapp.com",
+      "github": "https://github.com/Swatilekha-Roy/Fem-STEM"
+    },
+    {
+      "title": "rhythMind",
+      "description": "Mental health companion app...",
+      "image": "img/rhythmind.png",
+      "demo": "https://example.com",
+      "github": "https://github.com/...",
+      "tags": ["MLH", "Mobile", "Accessibility"]
+    }
+  ],
+  "otherProjects": [
+    {
+      "title": "Analog Clock",
+      "description": "An analog clock that will show the time and date on being clicked or hovered and will show the hour, minute and second hands movement. It also has a stopwatch.",
+      "image": "https://www.dl.dropboxusercontent.com/s/eunrnrzzu6kk7ld/analog.png?dl=0",
+      "demo": "https://swatilekha-roy.github.io/Analog-clock",
+      "github": "https://github.com/Swatilekha-Roy/Analog-clock"
+    },
+    {
+      "title": "Last Seen",
+      "description": "\"Last Seen\" is a short film that portrays the journey of Shreya, a college going girl who is secretly battling depression. I wrote, directed, captured and edited it.",
+      "image": "https://dl.dropboxusercontent.com/s/p48cknxtwcrr0gt/last%20seen.png?dl=0",
+      "demo": "https://www.youtube.com/watch?v=ozuWOj8eiuo"
+    },
+    {
+      "title": "Elizabeth, a Cine Book",
+      "description": "Winner of CINE-BOOKS & SWEEK, my story got adapted into a screenplay by Marta Syrko. The actors James and Elizabeth were played by Andrii Petruk and Tamri Kogor.",
+      "image": "https://dl.dropboxusercontent.com/s/i7ofw194x51zeqk/elizabeth.jpg?dl=0",
+      "demo": "https://www.youtube.com/watch?v=zSURAFBq5E8",
+      "github": "https://cine-books.com/store/elizabeth-346"
+    },
+    {
+      "title": "Never Again",
+      "description": "A group of aspiring writers on Sweek.com came together to write holocaust-themed books, stories, plays and poems to raise awareness on International Holocaust Remembrance Day!",
+      "image": "https://dl.dropboxusercontent.com/s/jhj5986twjn9zmn/holocaust.png?dl=0",
+      "demo": "https://www.youtube.com/watch?v=15ts5Kna6_0&t=72s",
+      "github": "https://writesupport.wordpress.com/2018/01/26/first-blog-post/"
+    }
+  ]
+}

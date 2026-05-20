@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Title -->
+    <title>Find Me | Swatilekha Roy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- WOW CSS -->
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <!-- FA CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div data-component="header"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Bottom Introductory section -->
+      <div class="container other-con">
+        <div class="row">
+          <!-- Contact Form -->
+          <div class="col-12 col-md-7 col-lg-6 wow fadeInRight">
+            <h3 class="contact-h">Get in Touch!</h3>
+            <form target="_blank">
+              <div class="form-group">
+                <div class="form-row">
+                  <!-- Form fields -->
+                  <div class="col">
+                    <label for="name-id">Full Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-id"
+                      class="form-control"
+                      placeholder="Anna Oldenburg"
+                      required
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="email-id">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email-id"
+                      class="form-control"
+                      placeholder="annaofarendelle@ice.in"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message-id">I wanna tell you...</label>
+                <textarea
+                  placeholder="It's getting too cold here but I feel awkward to tell my sister...I need some advice from you."
+                  class="form-control"
+                  name="message"
+                  id="message-id"
+                  rows="8"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Captchas and route -->
+              <input
+                type="hidden"
+                name="_next"
+                value="http://127.0.0.1:5500/index.html"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="text"
+                name="_honey"
+                id="_honeyinput"
+                style="display: none"
+              />
+
+              <!-- Submit form -->
+              <button
+                type="submit"
+                class="btn btn-lg btn-primary contact-btn btn-block"
+              >
+                Send <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div id="success-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div data-component="footer"></div>
+
+    <!-- JQuery JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- WOW JS -->
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
