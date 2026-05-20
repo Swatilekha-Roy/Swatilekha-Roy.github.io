@@ -24,7 +24,13 @@
     <link rel="stylesheet" href="css/animate.css" />
 
     <!-- FA CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
@@ -36,13 +42,16 @@
 
     <!-- Main Content -->
     <div class="main-content">
-      <!-- Bottom Introductory section -->
+      <!-- Contact Me Section -->
       <div class="container other-con">
-        <div class="row">
+        <div class="row align-items-center">
           <!-- Contact Form -->
-          <div class="col-12 col-md-7 col-lg-6 wow fadeInRight">
-            <h3 class="contact-h">Get in Touch!</h3>
-            <form target="_blank">
+          <div class="col-12 col-md-7 wow fadeInRight">
+            <h3 class="contact-h">Get in Touch</h3>
+            <form
+              action="https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/"
+              method="POST"
+            >
               <div class="form-group">
                 <div class="form-row">
                   <!-- Form fields -->
@@ -64,17 +73,16 @@
                       name="email"
                       id="email-id"
                       class="form-control"
-                      placeholder="annaofarendelle@ice.in"
+                      placeholder="anna@arendelle.in"
                       required
                     />
                   </div>
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="message-id">I wanna tell you...</label>
                 <textarea
-                  placeholder="It's getting too cold here but I feel awkward to tell my sister...I need some advice from you."
+                  placeholder="It's getting too cold here, but I feel awkward telling my sister...I need some advice from you."
                   class="form-control"
                   name="message"
                   id="message-id"
@@ -82,21 +90,13 @@
                   required
                 ></textarea>
               </div>
-
               <!-- Captchas and route -->
               <input
-                type="hidden"
-                name="_next"
-                value="http://127.0.0.1:5500/index.html"
-              />
-              <input type="hidden" name="_captcha" value="false" />
-              <input
                 type="text"
-                name="_honey"
-                id="_honeyinput"
+                name="_anna"
+                id="_anna"
                 style="display: none"
               />
-
               <!-- Submit form -->
               <button
                 type="submit"
@@ -104,10 +104,47 @@
               >
                 Send <i class="fa-solid fa-paper-plane"></i>
               </button>
-
               <div id="success-message"></div>
             </form>
           </div>
+
+          <!-- Where am I? -->
+          <div
+            class="col-12 col-md-5 d-flex flex-column align-items-center justify-content-center text-center wow fadeInLeft"
+          >
+            <img
+              src="assets/find-me/getintouch.JPG"
+              class="contact-section-img"
+              alt=""
+            />
+            <p>
+              I am a fiend with timely responses, but I do write thoughtful
+              replies whenever I can. :) If I’m AWOL, I’m either in the
+              mountains or rewatching Heated Rivalry for the
+              <em>(redacted)</em> time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <img
+        src="assets/divider.png"
+        class="divider"
+        alt="A decorative horizontal page divider featuring a repeating pattern of hand-drawn yellow wavy lines punctuated by small yellow hearts on a white background."
+      />
+
+      <!-- Footnote -->
+      <div class="container footnote">
+        <div class="row wow fadeIn">
+          <p>
+            <b>Fun Fact</b>: My name combines “Swati,” the Sanskrit name of a
+            constellation, and “Lekha,” which means writing in Bengali.
+            <br />
+            My longest pen-pal once interpreted it as “written in the stars.” 🌟
+            <br />
+            <em>A girl can dream.</em>
+          </p>
         </div>
       </div>
     </div>

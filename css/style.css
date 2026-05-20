@@ -133,7 +133,7 @@ html {
 @media screen and (max-width: 600px)
 {
     .top-con {
-        margin-top: 36%;
+        margin-top: 13%;
     }
 } 
 
@@ -322,7 +322,8 @@ html {
 @media only screen and (max-width: 600px)
 {
     .sub-banner {
-        display: none;
+        padding: 0.5rem 1rem;
+        margin-top: 90px;
     }
 }
 
@@ -377,6 +378,17 @@ footer {
     height: 50px;
     background-color: #ebc45e;
     text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    footer {
+        margin-top: 3%;
+        padding-bottom: 0;
+    }
+
+    footer > span {
+        margin-top: 3%;
+    }
 }
 
 
@@ -546,12 +558,14 @@ img.error_img {
     background-color: #f28bac;
 }
 
+
+
 /* Find Me Page */
 input,textarea,.form-control {
-    background-color: #acfc2c96 !important;
+    background-color: #d0ffe3 !important;
     border-radius: 25px;
     border-width: 1px;
-    border-color: rgb(245, 158, 118) !important;
+    border-color: #f28bac !important;
     box-shadow: none;
 }
 
@@ -562,12 +576,12 @@ textarea {
 
 input:hover,textarea:hover,.form-control:hover {
     border-width: 2px;
-    background-color: #acfc2cb0 !important;
+    background-color: #9affc2 !important;
 }
 
 input:focus,textarea:focus.form-control:focus,input:active,textarea:active,.form-control:active {
-    background-color: #acfc2cb0 !important;
-    box-shadow: rgba(245, 158, 118, 0.781) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: #9affc2 !important;
+    box-shadow: #ffcfde 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 textarea:focus, 
@@ -582,8 +596,8 @@ input[type=number]:focus,
 [type=email].form-control:focus, 
 [type=tel].form-control:focus, 
 [contenteditable].form-control:focus {
-    background-color: #acfc2cb0 !important;
-    box-shadow: rgba(245, 158, 118, 0.781) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: #9affc2 !important;
+    box-shadow: #ffcfde 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     outline: none !important;
 }
 
@@ -595,12 +609,23 @@ label {
     margin-top: 2%;
     font-weight: 400;
     margin-left: 1%;
-    color: rgba(57, 119, 155, 0.884);
+    color: #708dc0;
 }
 
 .contact-btn {
     float: right;
-    margin-top: 2%;
+    margin-top: 5%;
+    padding: auto 2rem;
+}
+
+.contact-section-img {
+    width: 85%;
+    border-radius: 400px;
+    margin: 1rem 3rem;
+    border: 4px solid #ffffff;
+    box-shadow: 8px 10px 10px -6px #ffcfde;
+    -webkit-box-shadow: 8px 10px 10px -6px #ffcfde;
+    -moz-box-shadow: 8px 10px 10px -6px #ffcfde;
 }
 
 @media only screen and (max-width: 600px)

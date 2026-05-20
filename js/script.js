@@ -33,27 +33,46 @@ window.addEventListener("load", function () {
 /* Contact Form Handling */
 // Handle contact form submission without refreshing the page
 $("form").on("submit", function (e) {
-  // Spam/honeypot protection: block submissions if the hidden field has a value
-  if ($("#_honeyinput").val().length != 0) {
+  e.preventDefault();
+
+  // Spam/honeypot protection: block submissions if the honeypot field has a value
+  if ($("#_anna").val().length != 0) {
     return false;
   }
 
-  const dataString = $(this).serialize();
+  const $form = $(this);
+  const $submitBtn = $form.find('button[type="submit"]');
+  const $successMsg = $("#success-message");
+
+  // Show a loading state
+  $submitBtn.prop("disabled", true).text("Sending...");
 
   // Send the form data to formsubmit.co via AJAX
   $.ajax({
     type: "POST",
-    url: "https://formsubmit.co/3877f8bbba51205a28d60d24e448b2d0",
-    data: dataString,
+    url: "https://formsubmit.cloud/ajax/afe4b316-a6d6-44ef-aad0-137a958f2e80/",
+    data: $form.serialize(),
     dataType: "json",
+    success: function (data) {
+      $successMsg
+        .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
+        .css("margin-left", "2%");
+      $form[0].reset(); // Clear the form fields
+      $submitBtn
+        .prop("disabled", false)
+        .html('Send <i class="fa-solid fa-paper-plane"></i>');
+    },
+    error: function (err) {
+      $successMsg
+        .html(
+          '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.',
+        )
+        .css("color", "red");
+      $submitBtn
+        .prop("disabled", false)
+        .html('Send <i class="fa-solid fa-paper-plane"></i>');
+    },
   });
-
-  // Show a success message after submission
-  document.querySelector("#success-message").innerHTML =
-    '<i class="fas fa-check-circle"></i> Thanks for contacting me!';
-  document.querySelector("#success-message").style.marginLeft = "2%";
-
-  e.preventDefault();
 });
 
 /* Dynamic Content Loading and Navigation Highlighting */
@@ -126,7 +145,9 @@ async function loadExperience() {
     const experiences = json.experience_work || [];
     const leaderships = json.experience_leadership || [];
     const workContainer = document.getElementById("work-experience");
-    const leadershipContainer = document.getElementById("leadership-experience");
+    const leadershipContainer = document.getElementById(
+      "leadership-experience",
+    );
     if (!workContainer || !leadershipContainer) return maybeHidePreloader();
 
     workContainer.innerHTML = "";
