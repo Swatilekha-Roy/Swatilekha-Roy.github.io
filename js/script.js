@@ -37,10 +37,6 @@ $("#contact-form").on("submit", async function (e) {
 
   // Spam/honeypot protection: block submissions if the honeypot field has a value
   if ($("#_anna").val().length != 0) {
-    console.warn(
-      // Log a warning if honeypot is triggered
-      "Honeypot field was filled, likely a bot. Blocking submission.",
-    );
     return false;
   }
 
@@ -71,7 +67,7 @@ $("#contact-form").on("submit", async function (e) {
 
     if (response.ok) {
       $successMsg
-        .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
+        .html('<i class="fas fa-check-circle"></i> Thanks for writing me. ._.')
         .css({ "margin-left": "2%", color: "inherit" });
       $form[0].reset();
     } else {
@@ -81,7 +77,7 @@ $("#contact-form").on("submit", async function (e) {
     console.error("Submission Error:", error);
     $successMsg
       .html(
-        '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.',
+        '<i class="fas fa-exclamation-circle"></i> Oops! Something is wrong.',
       )
       .css("color", "red");
   } finally {
