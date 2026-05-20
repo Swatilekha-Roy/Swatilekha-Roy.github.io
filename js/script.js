@@ -50,7 +50,7 @@ $("form").on("submit", function (e) {
   // Send the form data to formsubmit.cloud via AJAX
   $.ajax({
     type: "POST",
-    url: "https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/",
+    url: "https://formsubmit.cloud/ajax/afe4b316-a6d6-44ef-aad0-137a958f2e80/",
     data: $form.serialize(),
     headers: {
       Accept: "application/json",
