@@ -52,7 +52,6 @@ $("form").on("submit", function (e) {
     type: "POST",
     url: "https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/",
     data: $form.serialize(),
-    dataType: "json",
     headers: {
       Accept: "application/json",
     },
@@ -66,6 +65,7 @@ $("form").on("submit", function (e) {
         .html('Send <i class="fa-solid fa-paper-plane"></i>');
     },
     error: function (err) {
+      console.error("FormSubmit AJAX Error:", err);
       $successMsg
         .html(
           '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.',
