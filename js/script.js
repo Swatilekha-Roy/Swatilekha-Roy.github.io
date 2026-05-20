@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
 /* Contact Form Handling */
 // Handle contact form submission without refreshing the page
 $("form").on("submit", function (e) {
-  // e.preventDefault();
+  e.preventDefault();
 
   // Spam/honeypot protection: block submissions if the honeypot field has a value
   if ($("#_anna").val().length != 0) {
