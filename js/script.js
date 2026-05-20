@@ -51,8 +51,8 @@ $("#contact-form").on("submit", function (e) {
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  // Use the verified Form ID and tell the server to return JSON instead of a redirect.
-  fetch("https://formsubmit.cloud/f/ae412012-a74c-45e8-a06d-f6f0d8fceb61/", {
+  // Use the verified Form ID without the trailing slash to prevent 404s.
+  fetch("https://formsubmit.cloud/f/ae412012-a74c-45e8-a06d-f6f0d8fceb61", {
     method: "POST",
     body: new FormData(this),
     headers: {
