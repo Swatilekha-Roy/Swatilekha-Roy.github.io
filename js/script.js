@@ -33,53 +33,56 @@ window.addEventListener("load", function () {
 /* Contact Form Handling */
 // Handle contact form submission without refreshing the page
 $("form").on("submit", function (e) {
-  e.preventDefault();
-
   // Spam/honeypot protection: block submissions if the honeypot field has a value
   if ($("#_anna").val().length != 0) {
     console.warn(
+      // Log a warning if honeypot is triggered
       "Honeypot field was filled, likely a bot. Blocking submission.",
     );
     return false;
   }
 
+  e.preventDefault();
+
   const $form = $(this);
   const $submitBtn = $form.find('button[type="submit"]');
   const $successMsg = $("#success-message");
+  const formData = new FormData(this);
 
   // Show a loading state
   $submitBtn.prop("disabled", true).text("Sending...");
 
-  // Send the form data to formsubmit.cloud via AJAX
-  $.ajax({
+  // Using fetch to handle the submission with better header support
+  fetch("https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/", {
     method: "POST",
-    url: "https://formsubmit.cloud/f/afe4b316-a6d6-44ef-aad0-137a958f2e80/", // Use the direct form action URL
-    data: $form.serialize(),
-    dataType: "json", // Explicitly expect JSON, as the Accept header should ensure it.
+    body: formData,
     headers: {
       Accept: "application/json",
     },
-    success: function (data) {
-      $successMsg
-        .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
-        .css({ "margin-left": "2%", color: "inherit" });
-      $form[0].reset(); // Clear the form fields
-      $submitBtn
-        .prop("disabled", false)
-        .html('Send <i class="fa-solid fa-paper-plane"></i>');
-    },
-    error: function (err) {
-      console.error("FormSubmit AJAX Error:", err);
+  })
+    .then((response) => {
+      if (response.ok) {
+        $successMsg
+          .html('<i class="fas fa-check-circle"></i> Thanks for contacting me!')
+          .css({ "margin-left": "2%", color: "inherit" });
+        $form[0].reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    })
+    .catch((error) => {
+      console.error("Submission Error:", error);
       $successMsg
         .html(
           '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.',
         )
         .css("color", "red");
+    })
+    .finally(() => {
       $submitBtn
         .prop("disabled", false)
         .html('Send <i class="fa-solid fa-paper-plane"></i>');
-    },
-  });
+    });
 });
 
 /* Dynamic Content Loading and Navigation Highlighting */
