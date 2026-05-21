@@ -11,7 +11,6 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-    text-align: justify;
     font-weight: 300;
     color: rgb(41, 39, 39);
     background-color: rgba(255, 255, 255, 0.719);
@@ -281,6 +280,20 @@ html {
     width: 120px;
     position: absolute;
 }
+
+.custom-nav-tooltip .tooltip-inner {
+  background-color: #897de8; 
+  color: #ffffff;           
+  font-family: "Dancing Script", cursive;
+  font-size: 15px;
+  border-radius: 9px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-nav-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #6c5ce7; 
+}
+
 
 @media only screen and (max-width: 800px) {
     .nav-item {
@@ -617,24 +630,60 @@ label {
     float: right;
     margin-top: 5%;
     padding: auto 2rem;
-    width: 200px;
+    width: 170px;
 }
 
 .contact-section-img {
     width: 85%;
     border-radius: 400px;
-    margin: 1rem 3rem;
+    margin: 0.5rem 3rem;
     border: 4px solid #ffffff;
     box-shadow: 8px 10px 10px -6px #ffcfde;
     -webkit-box-shadow: 8px 10px 10px -6px #ffcfde;
     -moz-box-shadow: 8px 10px 10px -6px #ffcfde;
 }
 
-@media only screen and (max-width: 600px)
-{
-    input,textarea,.form-control {
-        width: 290px;
-    }
+.social-svg {
+    fill: rgb(255, 255, 255);
+    margin: 3%;
+}
+
+.social-svg:hover,.social-svg:active,.social-svg:focus {
+    fill: #fcafc7;
+}
+
+.social-link {
+    text-decoration: none !important;
+}
+
+.social-img {
+    width: 250px;
+    margin: 0.5rem 3rem;
+}
+
+.social-link {
+    margin: 10px;
+}
+
+.social-container {
+    background-color: #958aea;
+    color: rgb(255, 255, 255);
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    margin-top: 3%;
+}
+
+.dog-tooltip .tooltip-inner {
+  background-color: #ffffff; 
+  color: #897de8;           
+  font-family: "Dancing Script", cursive;
+  font-size: 25px;
+  border-radius: 9px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-nav-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #6c5ce7; 
 }
 
 @media only screen and (max-width: 768px)
@@ -646,7 +695,24 @@ label {
 
 @media only screen and (max-width: 600px)
 {
+    input,textarea,.form-control {
+        width: 290px;
+    }
+
     #contact_form {
         margin-top: 9%;
     }
-}
+
+    .contact-btn {
+        width: 120px;
+        display: block;
+    }
+
+    .social-svg {
+        margin-top: 6%;
+    }
+
+    .social-link {
+        margin-top: 7%;        
+    }
+} 

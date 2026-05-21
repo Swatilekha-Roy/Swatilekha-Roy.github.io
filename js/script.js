@@ -76,9 +76,7 @@ $("#contact-form").on("submit", async function (e) {
   } catch (error) {
     console.error("Submission Error:", error);
     $successMsg
-      .html(
-        '<i class="fas fa-exclamation-circle"></i> Oops! Something is wrong.',
-      )
+      .html('<i class="fas fa-exclamation-circle"></i> Oops! Something stinks.')
       .css("color", "red");
   } finally {
     $submitBtn
@@ -117,6 +115,15 @@ async function includeComponents() {
 
   // Set active nav link after components are injected
   setActiveNavLink();
+
+  // Initialize Bootstrap tooltips for dynamic components
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]',
+  );
+  [...tooltipTriggerList].map((tooltipTriggerEl) => {
+    if (typeof bootstrap !== "undefined")
+      new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
   preloaderReady = true;
   maybeHidePreloader();
