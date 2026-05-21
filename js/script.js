@@ -169,11 +169,18 @@ function updateVisitorCount() {
     .then((resp) => resp.json())
     .then((data) => {
       // Use count_unique for distinct visitors or .count for total hits
-      const count = data.count_unique || data.count || "0";
-      statsEl.innerText = count.toLocaleString();
+      const count = data.count_unique || data.count || 0;
+
+      // If the count is 0, display "beautiful" instead as requested
+      if (parseInt(count) === 0) {
+        statsEl.innerText = "beautiful";
+      } else {
+        statsEl.innerText = count.toLocaleString();
+      }
     })
     .catch(() => {
-      statsEl.innerText = "Unavailable";
+      // If the counter fails to load (e.g. ad-blocker), fallback to "beautiful"
+      statsEl.innerText = "beautiful";
     });
 }
 
