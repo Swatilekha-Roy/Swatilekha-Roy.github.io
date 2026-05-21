@@ -110,6 +110,18 @@ async function includeComponents() {
     if (resp.ok) {
       const text = await resp.text();
       el.innerHTML = text;
+
+      // Execute any scripts found in the component (innerHTML won't run them)
+      const scripts = el.querySelectorAll("script");
+      scripts.forEach((oldScript) => {
+        const newScript = document.createElement("script");
+        Array.from(oldScript.attributes).forEach((attr) =>
+          newScript.setAttribute(attr.name, attr.value),
+        );
+        newScript.textContent = oldScript.textContent;
+        el.appendChild(newScript);
+        oldScript.remove();
+      });
     }
   }
 
@@ -124,6 +136,9 @@ async function includeComponents() {
     if (typeof bootstrap !== "undefined")
       new bootstrap.Tooltip(tooltipTriggerEl);
   });
+
+  // Load GoatCounter visitor statistics
+  updateVisitorCount();
 
   preloaderReady = true;
   maybeHidePreloader();
@@ -144,6 +159,23 @@ $(document).on("click", "#return-to-top", function (e) {
   e.preventDefault();
   $("html, body").animate({ scrollTop: 0 }, 500);
 });
+
+/* Visitor Count Display Logic (Fetching from GoatCounter) */
+function updateVisitorCount() {
+  const statsEl = document.getElementById("stats");
+  if (!statsEl) return;
+
+  fetch("https://swatilekharoy.goatcounter.com/counter/TOTAL.json")
+    .then((resp) => resp.json())
+    .then((data) => {
+      // Use count_unique for distinct visitors or .count for total hits
+      const count = data.count_unique || data.count || "0";
+      statsEl.innerText = count.toLocaleString();
+    })
+    .catch(() => {
+      statsEl.innerText = "Unavailable";
+    });
+}
 
 /* Main entry point: include shared components, load experiences, then initialize WOW */
 document.addEventListener("DOMContentLoaded", async () => {
