@@ -303,7 +303,7 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.custom-nav-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+.custom-nav-tooltip, .bs-tooltip-bottom, .tooltip-arrow::before {
   border-bottom-color: #6c5ce7; 
 }
 
@@ -575,6 +575,64 @@ img.error_img {
 
 
 
+/* Highlights Page */
+.achievement-ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    margin-top: 1.5rem;
+}
+
+.achievement-ul li {
+    max-width: 480px;
+    list-style-type: none !important;
+}
+
+.achievement-ul li::before {
+    font-family: FontAwesome;
+    content: "\f184";
+    margin-right: 8px;
+    font-size: 17px;
+}
+
+#tech-highlights > li::before, #impact-highlights > li::before {
+    color: #42ceed;
+}
+
+#literary-highlights > li::before {
+    color: #faffff;
+}
+
+.literary-con {
+    background-color: #17a7c8;
+    padding: 2rem 1.5rem;
+    border-radius: 30px;
+    color: #fff;
+}
+
+.top-highlight {
+    background-color: #90e4f7;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    border: 2px #fff solid;
+}
+
+.top-highlight > h4 {
+    color: rgb(41, 39, 39);
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px)
+{
+    .achievement-ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+
+
 /* Find Me Page */
 input,textarea,.form-control {
     background-color: #d0ffe3 !important;
@@ -582,6 +640,10 @@ input,textarea,.form-control {
     border-width: 1px;
     border-color: #f28bac !important;
     box-shadow: none;
+}
+
+form {
+    width: 90%;
 }
 
 textarea {
@@ -683,7 +745,7 @@ label {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.custom-nav-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+.dog-tooltip, .bs-tooltip-bottom, .tooltip-arrow::before {
   border-bottom-color: #6c5ce7; 
 }
 
@@ -691,6 +753,10 @@ label {
 {
     .contact-h {
         margin-top: 7%;
+    }
+
+    form {
+        width: 100%;
     }
 }
 
@@ -716,5 +782,9 @@ label {
 
     .social-link {
         margin-top: 7%;        
+    }
+
+    form {
+        width: 100%;
     }
 } 

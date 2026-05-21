@@ -188,6 +188,7 @@ function updateVisitorCount() {
 document.addEventListener("DOMContentLoaded", async () => {
   await includeComponents();
   await loadExperience();
+  await loadHighlights();
 
   if (typeof WOW !== "undefined") {
     new WOW().init();
@@ -247,5 +248,46 @@ function renderExperienceList(items, container) {
     }
 
     container.appendChild(experienceItem);
+  });
+}
+
+/* Load accolades/highlights from JSON and render into lists */
+async function loadHighlights() {
+  const impactContainer = document.getElementById("impact-highlights");
+  const techContainer = document.getElementById("tech-highlights");
+  const literaryContainer = document.getElementById("literary-highlights");
+  if (!impactContainer && !techContainer && !literaryContainer) return;
+
+  try {
+    const resp = await fetch("data/highlights.json");
+    if (!resp.ok) return;
+    const json = await resp.json();
+
+    if (impactContainer)
+      renderHighlightList(json.impactHighlights || [], impactContainer);
+    if (techContainer)
+      renderHighlightList(json.techHighlights || [], techContainer);
+    if (literaryContainer)
+      renderHighlightList(json.literaryHighlights || [], literaryContainer);
+  } catch (err) {
+    console.error("Error loading highlights:", err);
+  }
+}
+
+function renderHighlightList(items, container) {
+  container.innerHTML = "";
+  items.forEach((item) => {
+    const li = document.createElement("li");
+
+    // Create the description text
+    const textNode = document.createTextNode(`${item.text} - `);
+    li.appendChild(textNode);
+
+    // Create the italicized date
+    const em = document.createElement("em");
+    em.textContent = item.date;
+    li.appendChild(em);
+
+    container.appendChild(li);
   });
 }
