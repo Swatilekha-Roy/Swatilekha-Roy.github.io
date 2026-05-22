@@ -125,6 +125,11 @@ quote {
     background-color: #f28bac;
 }
 
+.intro-para {
+    text-align: center;
+    margin-top: 1rem;
+}
+
 
 /* Prevent Horizontal Scrolling */
 html {
@@ -627,6 +632,30 @@ img.error_img {
 
 
 /* Impact & Projects Page */
+.motif-summer::before {
+    content: "";
+    position: fixed;
+    top: 110px;
+    right: 0;
+    width: 270px;
+    height: 270px; 
+    background-image: url("../assets/impact/summer-doodle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.7; 
+    z-index: -1;
+    pointer-events: none; 
+}
+
+@media only screen and (max-width: 768px)
+{
+    .motif-summer::before {
+        top: 200px;
+        width: 180px;
+        height: 180px;
+        opacity: 0.5;
+    }
+}
 /* #d0ffe3 #9affc2 */
 
 
