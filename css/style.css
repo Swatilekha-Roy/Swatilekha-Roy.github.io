@@ -7,15 +7,16 @@
 /* Body Styles */
 html {
     scroll-behavior: smooth;
+    background-color: rgba(255, 255, 255, 0.719); /* Established as the base layer */
 }
 
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     color: rgb(41, 39, 39);
-    background-color: rgba(255, 255, 255, 0.719);
     cursor: url("../assets/cursor-auto.cur"), auto;
     overflow-x: hidden;
+    isolation: isolate; 
 }
 
 h1,h2,h3 {
@@ -542,6 +543,21 @@ img.error_img {
   to{text-shadow:0px 0px 20px #fff,0px 0px 20px #614ad3;}
 }
 
+.motif-home::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 1rem;
+    width: 250px;
+    height: 400px; 
+    background-image: url("../assets/me/lamppost.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.9; 
+    z-index: -1;
+    pointer-events: none; 
+}
+
 @media only screen and (max-width: 1200px)
 {
     .homepage-img {
@@ -562,6 +578,16 @@ img.error_img {
     }
 }
 
+@media only screen and (max-width: 768px)
+{
+    .motif-home::before {
+        right: 1rem;
+        width: 150px;
+        height: 400px;
+        opacity: 0.5;
+    }
+}
+
 
 
 /* Experience Page */
@@ -572,6 +598,38 @@ img.error_img {
     background-color: hsl(0, 0%, 92%);
     border: 4px solid #ffffff;
 }
+
+.motif-winter::before {
+    content: "";
+    position: fixed;
+    top: 150px;
+    right: 2rem;
+    width: 250px;
+    height: 250px; 
+    background-image: url("../assets/experience/winter-doodle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5; 
+    z-index: -1;
+    pointer-events: none; 
+}
+
+@media only screen and (max-width: 768px)
+{
+    .motif-winter::before {
+        right: 1rem;
+        top: 300px;
+        width: 200px;
+        height: 200px;
+        opacity: 0.2;
+    }
+}
+
+
+
+/* Impact & Projects Page */
+/* #d0ffe3 #9affc2 */
+
 
 
 
@@ -622,6 +680,21 @@ img.error_img {
     text-align: center;
 }
 
+.motif-monsoon::before {
+    content: "";
+    position: fixed;
+    top: 110px;
+    right: 2rem;
+    width: 200px;
+    height: 200px; 
+    background-image: url("../assets/highlights/monsoon-doodle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.7; 
+    z-index: -1;
+    pointer-events: none; 
+}
+
 @media only screen and (max-width: 768px)
 {
     .achievement-ul {
@@ -629,13 +702,21 @@ img.error_img {
         -moz-column-count: 1;
         column-count: 1;
     }
+
+    .motif-monsoon::before {
+        right: 1rem;
+        top: 180px;
+        width: 200px;
+        height: 200px;
+        opacity: 0.4;
+    }
 }
 
 
 
 /* Find Me Page */
 input,textarea,.form-control {
-    background-color: #d0ffe3 !important;
+    background-color: #e5e2ff !important;
     border-radius: 25px;
     border-width: 1px;
     border-color: #f28bac !important;
@@ -652,12 +733,11 @@ textarea {
 }
 
 input:hover,textarea:hover,.form-control:hover {
-    border-width: 2px;
-    background-color: #9affc2 !important;
+    background-color: #d1cdfe !important;
 }
 
 input:focus,textarea:focus.form-control:focus,input:active,textarea:active,.form-control:active {
-    background-color: #9affc2 !important;
+    background-color: #d1cdfe !important;
     box-shadow: #ffcfde 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -673,7 +753,7 @@ input[type=number]:focus,
 [type=email].form-control:focus, 
 [type=tel].form-control:focus, 
 [contenteditable].form-control:focus {
-    background-color: #9affc2 !important;
+    background-color: #d1cdfe !important;
     box-shadow: #ffcfde 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     outline: none !important;
 }
@@ -764,7 +844,6 @@ label {
 {
     input,textarea,.form-control {
         width: 100%;
-        max-width: 330px;
     }
 
     #contact_form {
