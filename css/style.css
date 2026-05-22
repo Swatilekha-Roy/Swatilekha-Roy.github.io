@@ -588,7 +588,7 @@ img.error_img {
     .motif-home::before {
         left: 0;
         width: 150px;
-        opacity: 0.5;
+        opacity: 0.6;
     }
 }
 
@@ -622,10 +622,10 @@ img.error_img {
 {
     .motif-winter::before {
         right: 1rem;
-        top: 300px;
-        width: 170px;
-        height: 170px;
-        opacity: 0.2;
+        top: 400px;
+        width: 150px;
+        height: 150px;
+        opacity: 0.4;
     }
 }
 
@@ -653,7 +653,7 @@ img.error_img {
         top: 200px;
         width: 180px;
         height: 180px;
-        opacity: 0.5;
+        opacity: 0.6;
     }
 }
 /* #d0ffe3 #9affc2 */
@@ -722,7 +722,7 @@ img.error_img {
         top: 180px;
         width: 200px;
         height: 200px;
-        opacity: 0.4;
+        opacity: 0.5;
     }
 }
 
