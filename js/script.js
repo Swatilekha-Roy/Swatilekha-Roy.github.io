@@ -49,9 +49,7 @@ $("#contact-form").on("submit", async function (e) {
 
   // Convert FormData to a plain object and ensure access_key is a single string
   const formData = Object.fromEntries(new FormData(this));
-  formData.access_key = "5273e7fd-9067-4e85-a420-51ff86dd382d".trim();
-
-  const json = JSON.stringify(formData);
+  formData.access_key = "5273e7fd-9067-4e85-a420-51ff86dd382d";
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -60,7 +58,7 @@ $("#contact-form").on("submit", async function (e) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: json,
+      body: JSON.stringify(formData),
     });
 
     const data = await response.json();
@@ -132,16 +130,14 @@ async function includeComponents() {
   const tooltipTriggerList = document.querySelectorAll(
     '[data-bs-toggle="tooltip"]',
   );
-  [...tooltipTriggerList].map((tooltipTriggerEl) => {
-    if (typeof bootstrap !== "undefined")
+  if (typeof bootstrap !== "undefined") {
+    tooltipTriggerList.forEach((tooltipTriggerEl) => {
       new bootstrap.Tooltip(tooltipTriggerEl);
-  });
+    });
+  }
 
   // Load GoatCounter visitor statistics
   updateVisitorCount();
-
-  preloaderReady = true;
-  maybeHidePreloader();
 }
 
 /* Scroll-to-Top Button Functionality */
@@ -169,10 +165,10 @@ function updateVisitorCount() {
     .then((resp) => resp.json())
     .then((data) => {
       // Use count_unique for distinct visitors or .count for total hits
-      const count = data.count_unique || data.count || 0;
+      const count = Number(data.count_unique || data.count || 0);
 
       // If the count is 0, display "beautiful" instead as requested
-      if (parseInt(count) === 0) {
+      if (count === 0) {
         statsEl.innerText = "beautiful";
       } else {
         statsEl.innerText = count.toLocaleString();
@@ -187,8 +183,12 @@ function updateVisitorCount() {
 /* Main entry point: include shared components, load experiences, then initialize WOW */
 document.addEventListener("DOMContentLoaded", async () => {
   await includeComponents();
-  await loadExperience();
-  await loadHighlights();
+
+  // Load all data in parallel for better performance
+  await Promise.all([loadExperience(), loadHighlights(), loadImpact()]);
+
+  preloaderReady = true;
+  maybeHidePreloader();
 
   if (typeof WOW !== "undefined") {
     new WOW().init();
@@ -197,32 +197,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 /* Load work experiences from JSON and render into experience containers */
 async function loadExperience() {
+  const workContainer = document.getElementById("work-experience");
+  const leadershipContainer = document.getElementById("leadership-experience");
+  if (!workContainer && !leadershipContainer) return;
+
   try {
     const resp = await fetch("data/experience.json");
-    if (!resp.ok) return maybeHidePreloader();
+    if (!resp.ok) {
+      console.error("Failed to load experience data:", resp.statusText);
+      return;
+    }
     const json = await resp.json();
-    const experiences = json.experience_work || [];
-    const leaderships = json.experience_leadership || [];
-    const workContainer = document.getElementById("work-experience");
-    const leadershipContainer = document.getElementById(
-      "leadership-experience",
-    );
-    if (!workContainer || !leadershipContainer) return maybeHidePreloader();
 
-    workContainer.innerHTML = "";
-    leadershipContainer.innerHTML = "";
-
-    renderExperienceList(experiences, workContainer);
-    renderExperienceList(leaderships, leadershipContainer);
-
-    maybeHidePreloader();
+    if (workContainer) renderExperienceList(json.work || [], workContainer);
+    if (leadershipContainer)
+      renderExperienceList(json.leadership || [], leadershipContainer);
   } catch (err) {
     console.error("Error loading experience:", err);
-    maybeHidePreloader();
   }
 }
 
 function renderExperienceList(items, container) {
+  container.innerHTML = "";
   items.forEach((item) => {
     const experienceItem = document.createElement("div");
     experienceItem.className = "col-12 col-md-6 experience-section wow fadeIn";
@@ -237,13 +233,11 @@ function renderExperienceList(items, container) {
       experienceItem.appendChild(dateElement);
     }
 
-    if (Array.isArray(item.description)) {
+    if (item.description) {
       const p = document.createElement("p");
-      p.innerHTML = item.description.join("<br />");
-      experienceItem.appendChild(p);
-    } else if (typeof item.description === "string") {
-      const p = document.createElement("p");
-      p.innerHTML = item.description;
+      p.innerHTML = Array.isArray(item.description)
+        ? item.description.join("<br />")
+        : item.description;
       experienceItem.appendChild(p);
     }
 
@@ -260,7 +254,10 @@ async function loadHighlights() {
 
   try {
     const resp = await fetch("data/highlights.json");
-    if (!resp.ok) return;
+    if (!resp.ok) {
+      console.error("Failed to load highlights data:", resp.statusText);
+      return;
+    }
     const json = await resp.json();
 
     if (impactContainer)
@@ -289,5 +286,106 @@ function renderHighlightList(items, container) {
     li.appendChild(em);
 
     container.appendChild(li);
+  });
+}
+
+/* Load impact/volunteering and project data from JSON and render into sections */
+async function loadImpact() {
+  const volunteerContainer = document.getElementById("volunteer-impact");
+  const projectContainer = document.getElementById("project-impact");
+  // Only return if both containers are missing, otherwise proceed if at least one exists
+  if (!volunteerContainer && !projectContainer) return;
+
+  try {
+    const resp = await fetch("data/impact.json");
+    if (!resp.ok) {
+      console.error("Failed to load impact data:", resp.statusText);
+      return;
+    }
+    const json = await resp.json();
+
+    if (volunteerContainer) {
+      renderVolunteeringList(json.volunteering || [], volunteerContainer);
+    }
+    if (projectContainer) {
+      renderProjectItems(json.projects || [], projectContainer);
+    }
+  } catch (err) {
+    console.error("Error loading impact:", err);
+  }
+}
+
+// Renders volunteering items into the specified container
+function renderVolunteeringList(items, container) {
+  container.innerHTML = "";
+  items.forEach((item) => {
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "col-12 col-md-6 wow fadeIn volunteer-section"; // Apply classes as per template
+
+    const title = document.createElement("h4");
+    title.textContent = item.title;
+    itemDiv.appendChild(title);
+
+    if (item.date) {
+      const date = document.createElement("em");
+      date.textContent = item.date;
+      itemDiv.appendChild(date);
+    }
+
+    // Description is an array in JSON, but rendered as a single <p> in the template
+    if (item.description) {
+      const p = document.createElement("p");
+      p.innerHTML = Array.isArray(item.description)
+        ? item.description.join("<br />")
+        : item.description;
+      itemDiv.appendChild(p);
+    }
+
+    container.appendChild(itemDiv);
+  });
+}
+
+// Renders project items into the specified container
+function renderProjectItems(items, container) {
+  container.innerHTML = "";
+  items.forEach((item) => {
+    // Outer column div matching legacy projects.html
+    const colDiv = document.createElement("div");
+    colDiv.className = "col-sm-6 col-md-4 wow fadeIn";
+
+    // Card container
+    const cardDiv = document.createElement("div");
+    cardDiv.className = "card pro-card mb-4";
+
+    // Image at the top
+    if (item.img) {
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.className = "card-img-top";
+      img.alt = item.title || "Project image";
+      cardDiv.appendChild(img);
+    }
+
+    // Card body for content
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body pro-card-body";
+
+    // Project Name (Title)
+    const title = document.createElement("h4");
+    title.className = "card-title";
+    title.textContent = item.title;
+    cardBody.appendChild(title);
+
+    // Project Description
+    if (item.description) {
+      const p = document.createElement("p");
+      p.className = "card-text";
+      p.textContent = item.description;
+      cardBody.appendChild(p);
+    }
+
+    cardDiv.appendChild(cardBody);
+    colDiv.appendChild(cardDiv);
+    container.appendChild(colDiv);
   });
 }

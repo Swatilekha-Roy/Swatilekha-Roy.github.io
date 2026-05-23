@@ -8,6 +8,7 @@
 html {
     scroll-behavior: smooth;
     background-color: rgba(255, 255, 255, 0.719); /* Established as the base layer */
+    overflow-x: hidden !important;
 }
 
 body {
@@ -28,7 +29,7 @@ h1,h2,h3 {
 h4,h5 {
     font-family: 'Proza Libre', sans-serif;
     color: #92abd6;
-    font-weight: 400;
+    font-weight: 500;
     text-align: left;
 }
 
@@ -128,12 +129,6 @@ quote {
 .intro-para {
     text-align: center;
     margin-top: 1rem;
-}
-
-
-/* Prevent Horizontal Scrolling */
-html {
-    overflow-x: hidden !important;
 }
 
 
@@ -502,14 +497,17 @@ img.error_img {
 
 .home-section-1 {
     background-color: #ebebeb;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
 .home-section-2 {
     background-color: #f4ebfe;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
 .home-section-3 {
     background-color: #e6fff0;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
 .home-section-img {
@@ -554,7 +552,7 @@ img.error_img {
     bottom: 0;
     left: 1rem;
     width: 250px;
-    height: 300px; 
+    height: 330px; 
     background-image: url("../assets/me/lamppost.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -601,6 +599,7 @@ img.error_img {
     border-radius: 7px;
     background-color: hsl(0, 0%, 92%);
     border: 4px solid #ffffff;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
 .motif-winter::before {
@@ -647,6 +646,55 @@ img.error_img {
     pointer-events: none; 
 }
 
+.pro-card {
+    background-color: #e6fff0;
+    border-radius: 15px;
+    border: 2px solid #d0ffe3 !important;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 94%;
+    margin-top: 1rem;
+}
+
+.pro-card .card-img-top {
+    max-height: 195px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.pro-card:hover {
+    transform: translateY(-5px);
+}
+
+.pro-card-body {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.pro-card .card-title {
+    margin-bottom: 1rem;
+    color: #708dc0;
+}
+
+.volunteer-section {
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 7px;
+    background-color: #e6fff0;
+    border: 6px solid #ffffff;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
+}
+
+.speaker-impact > iframe {
+    width: 45% !important;
+    max-width: 1100px !important; 
+    aspect-ratio: 16 / 9;         
+    height: auto !important;      
+    display: block;
+    margin: 1rem auto;
+}
+
 @media only screen and (max-width: 768px)
 {
     .motif-summer::before {
@@ -655,9 +703,13 @@ img.error_img {
         height: 180px;
         opacity: 0.6;
     }
-}
-/* #d0ffe3 #9affc2 */
 
+    .speaker-impact > iframe {
+        width: 100% !important;
+        aspect-ratio: 16 / 9;
+        height: auto !important;
+    }
+}
 
 
 
@@ -880,4 +932,4 @@ label {
     form {
         width: 100%;
     }
-} 
+}

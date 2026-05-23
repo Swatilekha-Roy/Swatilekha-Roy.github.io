@@ -1,5 +1,5 @@
 {
-  "experience_work": [
+  "work": [
     {
       "title": "Support Engineer Intern, Microsoft",
       "date": "Apr - Jul 2022",
@@ -27,12 +27,12 @@
       ]
     }
   ],
-  "experience_leadership": [
+  "leadership": [
     {
-      "title": "'Future Looks Like You' Future Accelerator Mentee, Untapped",
+      "title": "'Future Looks Like You' Future Accelerator, Untapped",
       "date": "Jul - Aug 2021",
       "description": [
-        "‣ Selected as 1 of 21 participants for the global Mentorship Accelerator, and the only participant chosen from outside the United States.",
+        "‣ Selected as 1 of 21 mentees for the global Mentorship Accelerator, and the only participant chosen from outside the United States.",
         "‣ Learned directly from LinkedIn creators and industry professionals through focused sessions on career growth in tech.",
         "‣ Participated in small-group coaching and built meaningful connections within a global tech community."
       ]
@@ -44,6 +44,22 @@
         "‣ Secured a place in the Qoom Creator Group cohort by winning RU Hacks 2021.",
         "‣ Built LearnLily, an all-in-one education platform for students and job seekers, in a team of two.",
         "‣ Developed an ML-powered speech analysis feature for LearnLily, to detect speaking posture, fumbling, and use of external aids; won the Audience Choice Award at the end of the cohort."
+      ]
+    },
+    {
+      "title": "TAAP – IT Employability Program, Tata Consultancy Services",
+      "date": "Jan – Dec 2021",
+      "description": [
+        "‣ Enrolled in Tata Consultancy Services’ Youth Employment Program, a flagship CSR initiative.",
+        "‣ Featured on the official website as a success story."
+      ]
+    },
+    {
+      "title": "Open Source, JGEC Winter of Code",
+      "date": "Jan - Feb 2021",
+      "description": [
+        "‣ Ranked among the top contributors in JGEC Winter of Code Phase 1, securing Rank 4 in Phase 2.",
+        "‣ Made 33 commits and 19+ merged pull requests across 3 open-source projects using HTML5, CSS3, Node.js, Vue.js, and Markdown."
       ]
     }
   ]
