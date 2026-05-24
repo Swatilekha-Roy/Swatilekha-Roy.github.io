@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       span.classList.add("char");
       // Add a base delay plus a random variance to simulate human typing/writing rhythm
       const randomJitter = Math.random() * 0.12;
-      cumulativeDelay += 0.12 + randomJitter;
+      cumulativeDelay += 0.10 + randomJitter;
       span.style.animationDelay = `${cumulativeDelay}s`;
       nameHome.appendChild(span);
     });
