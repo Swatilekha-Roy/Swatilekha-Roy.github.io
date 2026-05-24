@@ -26,6 +26,44 @@ h1,h2,h3 {
     font-weight: 500;
 }
 
+h2 {
+    padding-bottom: 25px;
+}
+
+h3 {
+    position: relative;
+    padding-bottom: 25px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    width: 110%;
+    height: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 50'%3E%3Cpath d='M10,25 C40,5 75,45 110,25 C145,5 180,45 215,25 C250,5 285,45 320,25 C355,5 390,45 425,25 C460,5 490,25 495,25' fill='none' stroke='%23f28bac' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    clip-path: inset(0 100% 0 0);
+}
+
+h3.visible::after {
+    animation: reveal-underline 2s ease-in-out forwards;
+}
+
+@keyframes reveal-underline {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
 h4,h5 {
     font-family: 'Proza Libre', sans-serif;
     color: #92abd6;
@@ -259,15 +297,33 @@ quote {
     color: #ee739a !important;
     margin: auto 2rem;
     font-weight: 400;
+    position: relative;
 }
 
 .nav-link:hover,.nav-link:focus,.nav-link:active {
     color: #84c59e !important;
 }
 
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: -40%;
+    width: 180%;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M0,12 L45,10 M40,15 L80,13 M75,12 L100,11' fill='none' stroke='%2384c59e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    opacity: 1;
+}
+
 .nav-link.active {
     color: #84c59e !important;
-    border-bottom: 2px solid #84c59e;
     padding-bottom: 5px;
 }
 
@@ -320,6 +376,10 @@ quote {
 
     .nav-link.active {
         border-bottom: none;
+    }
+
+    .nav-link::after {
+        display: none;
     }
 }
 
@@ -476,6 +536,23 @@ img.error_img {
     font-weight: 400;
     font-style: normal;
     text-align: left;
+}
+
+.name-home .char {
+    display: inline-block;
+    opacity: 0;
+    transform-origin: center;
+    filter: blur(4px);
+    transform: scale(1.4) rotate(-8deg) translateY(-10px);
+    animation: artistic-reveal 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+@keyframes artistic-reveal {
+    to {
+        opacity: 1;
+         filter: blur(0);
+        transform: scale(1) rotate(0) translateY(0);
+    }
 }
 
 .intro-about {

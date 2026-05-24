@@ -359,8 +359,44 @@ document.addEventListener("DOMContentLoaded", async () => {
     })(),
   ]);
 
+  // Artistic handwriting animation for the homepage name
+  const nameHome = document.querySelector(".name-home");
+  if (nameHome) {
+    const text = nameHome.textContent.trim();
+    nameHome.textContent = "";
+    let cumulativeDelay = 0;
+
+    [...text].forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char;
+      span.classList.add("char");
+      // Add a base delay plus a random variance to simulate human typing/writing rhythm
+      const randomJitter = Math.random() * 0.12;
+      cumulativeDelay += 0.12 + randomJitter;
+      span.style.animationDelay = `${cumulativeDelay}s`;
+      nameHome.appendChild(span);
+    });
+  }
+
   preloaderReady = true;
   maybeHidePreloader();
 
   if (typeof WOW !== "undefined") new WOW().init();
+
+  // Initialize Intersection Observer to trigger header underlines on scroll
+  const headerObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          headerObserver.unobserve(entry.target); // Ensure it only animates once
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document
+    .querySelectorAll("h3")
+    .forEach((header) => headerObserver.observe(header));
 });
