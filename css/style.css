@@ -501,7 +501,7 @@ img.error_img {
 }
 
 .home-section-2 {
-    background-color: #f4ebfe;
+    background-color: #fbe2c7;
     box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
@@ -521,16 +521,16 @@ img.error_img {
 }
 
 .home-highlight {
-    background-color: #708dc0;
+    background-color: #f5e2f5;
     padding: 2rem 1rem 1rem 1rem;
-    color: #fff;
-    border: 2px solid #ffffff;
+    color: #000;
+    border: 4px solid #ffffff;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
     text-align: left;
     border-radius: 15px;
 }
 
 .home-highlight > h4 {
-    color: #bfd9fd;
     text-align: center;
 }
 
@@ -630,6 +630,35 @@ img.error_img {
 
 
 
+/* Art & Whimsy Page */
+.motif-autumn::before {
+    content: "";
+    position: fixed;
+    top: 120px;
+    right: 30px;
+    width: 250px;
+    height: 250px; 
+    background-image: url("../assets/art/autumn-doodle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.8; 
+    z-index: -1;
+    pointer-events: none; 
+}
+
+@media only screen and (max-width: 768px)
+{
+    .motif-autumn::before {
+        top: 195px;
+        right: 5px;
+        width: 180px;
+        height: 180px;
+        opacity: 0.6;
+    }
+}
+
+
+
 /* Impact & Projects Page */
 .motif-summer::before {
     content: "";
@@ -682,7 +711,7 @@ img.error_img {
     padding: 2rem;
     border-radius: 7px;
     background-color: #e6fff0;
-    border: 6px solid #ffffff;
+    border: 4px solid #ffffff;
     box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
@@ -738,7 +767,8 @@ img.error_img {
     background-color: #90e4f7;
     padding: 2rem 1.5rem;
     border-radius: 10px;
-    border: 2px #fff solid;
+    border: 4px #fff solid;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
 .top-highlight > h4 {
@@ -880,6 +910,7 @@ label {
     padding: 1rem 1.5rem;
     border-radius: 30px;
     margin-top: 3%;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
 .dog-tooltip .tooltip-inner {
