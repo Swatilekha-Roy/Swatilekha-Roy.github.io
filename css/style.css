@@ -380,9 +380,9 @@ quote {
     color: #fff;
     margin: 0;
     position: relative;
-    left: 7px;
-    top: 12px;
-    font-size: 19px;
+    left: 12px;
+    top: 16px;
+    font-size: 20px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -501,7 +501,7 @@ img.error_img {
 }
 
 .home-section-2 {
-    background-color: #fbe2c7;
+    background-color: #faebdb;
     box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
 }
 
@@ -635,25 +635,96 @@ img.error_img {
     content: "";
     position: fixed;
     top: 120px;
-    right: 30px;
-    width: 250px;
-    height: 250px; 
+    right: 6px;
+    width: 210px;
+    height: 210px; 
     background-image: url("../assets/art/autumn-doodle.png");
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.8; 
+    opacity: 0.7; 
     z-index: -1;
     pointer-events: none; 
+}
+
+.publication-ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    margin-top: 1.5rem;
+}
+
+.publication-ul li {
+    max-width: 480px;
+    list-style-type: none !important;
+}
+
+.publication-ul li::before {
+    font-family: FontAwesome;
+    content: "\f5ad"; /* Pen Nib (Fountain Pen) icon */
+    font-weight: 900;
+    margin-right: 8px;
+    color: #cd7920;
+    font-size: 17px;
+}
+
+.publication-ul a {
+    margin-left: 15px;
+}
+
+.film-card {
+    border-radius: 15px;
+    background-color: #faebdb;
+    border: 2px solid #fdd4a2 !important;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 94%;
+    margin-top: 1rem;
+}
+
+.film-card .card-img-top {
+    max-height: 195px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.film-card:hover {
+    transform: translateY(-5px);
+}
+
+.film-card-body {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.film-card .card-title {
+    margin-bottom: 1rem;
+    color: #708dc0;
+}
+
+.btn-film {
+    float: right;
+    padding: 3px 1rem; 
+}
+
+.btn-film:hover,.btn-film:active,.btn-film:focus {
+    box-shadow: 0 4px 12px rgba(205, 121, 32, 0.751) !important;
 }
 
 @media only screen and (max-width: 768px)
 {
     .motif-autumn::before {
         top: 195px;
-        right: 5px;
+        right: 3px;
         width: 180px;
         height: 180px;
-        opacity: 0.6;
+        opacity: 0.4;
+    }
+
+    .publication-ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
     }
 }
 
@@ -757,14 +828,15 @@ img.error_img {
 
 .achievement-ul li::before {
     font-family: FontAwesome;
-    content: "\f184";
+    content: "\f559"; 
+    font-weight: 900;
     margin-right: 8px;
     font-size: 17px;
     color: #42ceed;
 }
 
 .top-highlight {
-    background-color: #90e4f7;
+    background: linear-gradient(135deg, #9bdfee 0%, #f8fdff 100%);
     padding: 2rem 1.5rem;
     border-radius: 10px;
     border: 4px #fff solid;
@@ -774,6 +846,7 @@ img.error_img {
 .top-highlight > h4 {
     color: rgb(41, 39, 39);
     text-align: center;
+    font-weight: 200;
 }
 
 .motif-monsoon::before {

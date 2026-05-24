@@ -98,7 +98,7 @@ function setActiveNavLink() {
   });
 }
 
-// Fetch and inject reusable components (header/footer) into the page
+// Fetch and inject reusable components (header/footer/divider) into the page
 async function includeComponents() {
   const components = document.querySelectorAll("[data-component]");
 
@@ -180,57 +180,33 @@ function updateVisitorCount() {
     });
 }
 
-/* Main entry point: include shared components, load experiences, then initialize WOW */
-document.addEventListener("DOMContentLoaded", async () => {
-  await includeComponents();
-
-  // Load all data in parallel for better performance
-  await Promise.all([loadExperience(), loadHighlights(), loadImpact()]);
-
-  preloaderReady = true;
-  maybeHidePreloader();
-
-  if (typeof WOW !== "undefined") {
-    new WOW().init();
-  }
-});
-
-/* Load work experiences from JSON and render into experience containers */
-async function loadExperience() {
-  const workContainer = document.getElementById("work-experience");
-  const leadershipContainer = document.getElementById("leadership-experience");
-  if (!workContainer && !leadershipContainer) return;
-
+/* Helper: Generic JSON Fetcher */
+async function fetchJSON(url) {
   try {
-    const resp = await fetch("data/experience.json");
-    if (!resp.ok) {
-      console.error("Failed to load experience data:", resp.statusText);
-      return;
-    }
-    const json = await resp.json();
-
-    if (workContainer) renderExperienceList(json.work || [], workContainer);
-    if (leadershipContainer)
-      renderExperienceList(json.leadership || [], leadershipContainer);
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error(`Failed to load ${url}: ${resp.statusText}`);
+    return await resp.json();
   } catch (err) {
-    console.error("Error loading experience:", err);
+    console.error(err);
+    return null;
   }
 }
 
-function renderExperienceList(items, container) {
+/* Helper: Render Block Items */
+function renderBlocks(items, container, sectionClass) {
   container.innerHTML = "";
-  items.forEach((item) => {
-    const experienceItem = document.createElement("div");
-    experienceItem.className = "col-12 col-md-6 experience-section wow fadeIn";
+  (items || []).forEach((item) => {
+    const div = document.createElement("div");
+    div.className = `col-12 col-md-6 wow fadeIn ${sectionClass}`;
 
     const title = document.createElement("h4");
     title.textContent = item.title || "";
-    experienceItem.appendChild(title);
+    div.appendChild(title);
 
     if (item.date) {
-      const dateElement = document.createElement("em");
-      dateElement.textContent = item.date;
-      experienceItem.appendChild(dateElement);
+      const em = document.createElement("em");
+      em.textContent = item.date;
+      div.appendChild(em);
     }
 
     if (item.description) {
@@ -238,154 +214,153 @@ function renderExperienceList(items, container) {
       p.innerHTML = Array.isArray(item.description)
         ? item.description.join("<br />")
         : item.description;
-      experienceItem.appendChild(p);
+      div.appendChild(p);
     }
-
-    container.appendChild(experienceItem);
+    container.appendChild(div);
   });
 }
 
-/* Load accolades/highlights from JSON and render into lists */
-async function loadHighlights() {
-  const impactContainer = document.getElementById("impact-highlights");
-  const techContainer = document.getElementById("tech-highlights");
-  const literaryContainer = document.getElementById("literary-highlights");
-  if (!impactContainer && !techContainer && !literaryContainer) return;
+/* Helper: Render Card Items */
+async function renderCards(
+  items,
+  container,
+  cardClass,
+  bodyClass,
+  hasButton = false,
+) {
+  container.innerHTML = ""; // Clear container initially
 
-  try {
-    const resp = await fetch("data/highlights.json");
-    if (!resp.ok) {
-      console.error("Failed to load highlights data:", resp.statusText);
-      return;
-    }
-    const json = await resp.json();
+  const cardElements = []; // To store fully constructed card DOM elements
+  const imageLoadPromises = []; // To track image loading for each card
 
-    if (impactContainer)
-      renderHighlightList(json.impactHighlights || [], impactContainer);
-    if (techContainer)
-      renderHighlightList(json.techHighlights || [], techContainer);
-    if (literaryContainer)
-      renderHighlightList(json.literaryHighlights || [], literaryContainer);
-  } catch (err) {
-    console.error("Error loading highlights:", err);
-  }
-}
+  (items || []).forEach((item) => {
+    const col = document.createElement("div");
+    col.className = "col-sm-6 col-md-4 wow fadeIn";
 
-function renderHighlightList(items, container) {
-  container.innerHTML = "";
-  items.forEach((item) => {
-    const li = document.createElement("li");
+    const card = document.createElement("div");
+    card.className = `card mb-4 ${cardClass}`;
 
-    // Create the description text
-    const textNode = document.createTextNode(`${item.text} - `);
-    li.appendChild(textNode);
-
-    // Create the italicized date
-    const em = document.createElement("em");
-    em.textContent = item.date;
-    li.appendChild(em);
-
-    container.appendChild(li);
-  });
-}
-
-/* Load impact/volunteering and project data from JSON and render into sections */
-async function loadImpact() {
-  const volunteerContainer = document.getElementById("volunteer-impact");
-  const projectContainer = document.getElementById("project-impact");
-  // Only return if both containers are missing, otherwise proceed if at least one exists
-  if (!volunteerContainer && !projectContainer) return;
-
-  try {
-    const resp = await fetch("data/impact.json");
-    if (!resp.ok) {
-      console.error("Failed to load impact data:", resp.statusText);
-      return;
-    }
-    const json = await resp.json();
-
-    if (volunteerContainer) {
-      renderVolunteeringList(json.volunteering || [], volunteerContainer);
-    }
-    if (projectContainer) {
-      renderProjectItems(json.projects || [], projectContainer);
-    }
-  } catch (err) {
-    console.error("Error loading impact:", err);
-  }
-}
-
-// Renders volunteering items into the specified container
-function renderVolunteeringList(items, container) {
-  container.innerHTML = "";
-  items.forEach((item) => {
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "col-12 col-md-6 wow fadeIn volunteer-section"; // Apply classes as per template
-
-    const title = document.createElement("h4");
-    title.textContent = item.title;
-    itemDiv.appendChild(title);
-
-    if (item.date) {
-      const date = document.createElement("em");
-      date.textContent = item.date;
-      itemDiv.appendChild(date);
-    }
-
-    // Description is an array in JSON, but rendered as a single <p> in the template
-    if (item.description) {
-      const p = document.createElement("p");
-      p.innerHTML = Array.isArray(item.description)
-        ? item.description.join("<br />")
-        : item.description;
-      itemDiv.appendChild(p);
-    }
-
-    container.appendChild(itemDiv);
-  });
-}
-
-// Renders project items into the specified container
-function renderProjectItems(items, container) {
-  container.innerHTML = "";
-  items.forEach((item) => {
-    // Outer column div matching legacy projects.html
-    const colDiv = document.createElement("div");
-    colDiv.className = "col-sm-6 col-md-4 wow fadeIn";
-
-    // Card container
-    const cardDiv = document.createElement("div");
-    cardDiv.className = "card pro-card mb-4";
-
-    // Image at the top
     if (item.img) {
-      const img = document.createElement("img");
-      img.src = item.img;
+      const img = document.createElement("img"); // Create the actual img element for the DOM
       img.className = "card-img-top";
-      img.alt = item.title || "Project image";
-      cardDiv.appendChild(img);
+      img.alt = item.title || "Image";
+
+      const imgLoadPromise = new Promise((resolve) => {
+        const tempImg = new Image(); // Use a temporary Image object to pre-load
+        tempImg.src = item.img;
+
+        tempImg.onload = () => {
+          img.src = item.img; // Set src for the actual img element after pre-load
+          card.prepend(img); // Prepend so image is at the top of the card
+          resolve();
+        };
+        tempImg.onerror = () => {
+          console.warn(
+            `Failed to load image: ${item.img}. Skipping image for this card.`,
+          );
+          // Optionally, add a placeholder image here if desired
+          resolve(); // Resolve even if image fails to load, so other cards can render
+        };
+      });
+      imageLoadPromises.push(imgLoadPromise);
     }
 
-    // Card body for content
-    const cardBody = document.createElement("div");
-    cardBody.className = "card-body pro-card-body";
+    const body = document.createElement("div");
+    body.className = `card-body ${bodyClass}`;
 
-    // Project Name (Title)
     const title = document.createElement("h4");
     title.className = "card-title";
-    title.textContent = item.title;
-    cardBody.appendChild(title);
+    title.textContent = item.title || "";
+    body.appendChild(title);
 
-    // Project Description
     if (item.description) {
       const p = document.createElement("p");
       p.className = "card-text";
       p.textContent = item.description;
-      cardBody.appendChild(p);
+      body.appendChild(p); // Append description
     }
 
-    cardDiv.appendChild(cardBody);
-    colDiv.appendChild(cardDiv);
-    container.appendChild(colDiv);
+    if (hasButton && item.link) {
+      const btn = document.createElement("a");
+      btn.href = item.link;
+      btn.className = "btn btn-primary btn-sm btn-film";
+      btn.innerHTML = 'Watch <i class="fa-solid fa-play"></i>';
+      body.appendChild(btn); // Append button
+    }
+
+    card.appendChild(body); // Append body to card
+    col.appendChild(card);
+    cardElements.push(col); // Store the column element
   });
+
+  // Wait for all images to load (or fail) before appending any cards to the DOM
+  await Promise.all(imageLoadPromises);
+  cardElements.forEach((el) => container.appendChild(el));
 }
+
+/* Main entry point */
+document.addEventListener("DOMContentLoaded", async () => {
+  await includeComponents();
+
+  await Promise.all([
+    (async () => {
+      const data = await fetchJSON("data/experience.json");
+      if (!data) return;
+      const workCon = document.getElementById("work-experience");
+      const leadCon = document.getElementById("leadership-experience");
+      if (workCon) renderBlocks(data.work, workCon, "experience-section");
+      if (leadCon) renderBlocks(data.leadership, leadCon, "experience-section");
+    })(),
+    (async () => {
+      const data = await fetchJSON("data/highlights.json");
+      if (!data) return;
+      ["impact", "tech", "literary"].forEach((key) => {
+        const con = document.getElementById(`${key}-highlights`);
+        if (con) {
+          con.innerHTML = "";
+          (data[`${key}Highlights`] || []).forEach((item) => {
+            const li = document.createElement("li");
+            li.innerHTML = `${item.text} - <em>${item.date}</em>`;
+            con.appendChild(li);
+          });
+        }
+      });
+    })(),
+    (async () => {
+      const data = await fetchJSON("data/impact.json");
+      if (!data) return;
+      const volCon = document.getElementById("volunteer-impact");
+      const proCon = document.getElementById("project-impact");
+      if (volCon) renderBlocks(data.volunteering, volCon, "volunteer-section");
+      if (proCon)
+        await renderCards(data.projects, proCon, "pro-card", "pro-card-body");
+    })(),
+    (async () => {
+      const data = await fetchJSON("data/art.json");
+      if (!data) return;
+      const pubCon = document.querySelector(".publication-ul");
+      const filmCon = document.getElementById("onscreen-art");
+      if (pubCon) {
+        pubCon.innerHTML = "";
+        (data.publications || []).forEach((item) => {
+          const li = document.createElement("li");
+          li.innerHTML = `${item.text} - <em>${item.date}</em> ${item.link ? `<a href="${item.link}">Read here</a>` : ""}<br />`;
+          pubCon.appendChild(li);
+        });
+      }
+      if (filmCon)
+        await renderCards(
+          data.film,
+          filmCon,
+          "film-card",
+          "film-card-body",
+          true,
+        );
+    })(),
+  ]);
+
+  preloaderReady = true;
+  maybeHidePreloader();
+
+  if (typeof WOW !== "undefined") new WOW().init();
+});
