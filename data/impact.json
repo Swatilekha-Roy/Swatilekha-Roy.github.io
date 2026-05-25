@@ -1,0 +1,96 @@
+{
+  "volunteering": [
+    {
+      "title": "Speaker, Mentor, Scholar Reviewer, Moderator - AnitaB.org",
+      "date": "Since Jul 2021",
+      "description": [
+        "‣ Invited as a GHC 2026 Speaker for the session “Off-Script: Make Impact Your Main Track”, after years of continued involvement across the community.",
+        "‣ Served across multiple leadership and support roles.",
+        "‣ Leadership Track: vGHC’21 Scholar → vGHC’21 Moderator → GHC’23 Scholar Reviewer → Mentor → GHCI’24 Scholar → GHCI’25 Ambassador & Volunteer Co-Lead → GHC’26 Speaker"
+      ]
+    },
+    {
+      "title": "Ambassador, Volunteer Co-lead - AnitaB.org India",
+      "date": "Since Oct 2025",
+      "description": [
+        "‣ Served as a Grace Hopper Celebration India Ambassador, driving awareness and participation across diverse student and professional communities.",
+        "‣ Recognized as Top Ambassador for GHCI 2025, leading the leaderboard with 65 verified missions completed.",
+        "‣ Served as GHCI Volunteer Co-Lead, supporting 100+ volunteers and helping execute a 6,000+ attendee conference with 350+ speakers."
+      ]
+    },
+    {
+      "title": "Mentor - Rewriting the Code",
+      "date": "Since Jun 2024",
+      "description": [
+        "‣ Mentored community members through regular 1:1 coffee chats and career guidance sessions.",
+        "‣ Conducted live résumé review and interview prep workshops for students and early-career professionals.",
+        "‣ Led mentoring circles on conference prep, interviews, and career growth, and was recognized as a Top Mentor for 2025."
+      ]
+    },
+    {
+      "title": "Co-founder, CGEC Alumni Mentorship Program - Cooch Behar Government Engineering College",
+      "date": "Since Nov 2025",
+      "description": [
+        "‣ Co-founded the CGEC Alumni Mentorship Program to connect alumni with the next generation of student engineers.",
+        "‣ Built a community-driven initiative rooted in mentorship, gratitude, and giving back."
+      ]
+    },
+    {
+      "title": "Curriculum Reviewer - Code.org",
+      "date": "Feb - May 2024",
+      "description": "Reviewed, tested, and provided pilot feedback on Code.org curricula (Coding with AI, Computer Vision) for accessibility."
+    },
+    {
+      "title": "Peer Reviewer - The Yass Prize",
+      "date": "Apr 2024",
+      "description": "Represented Applied Computing Foundation in The Yass Prize and served as a peer reviewer for social entrepreneurship grant applicants."
+    },
+    {
+      "title": "Walk For Dog - Animals Aid & Rescue Trust (AART)",
+      "date": "Sep 2018",
+      "description": "Fed and cared for stray dogs at scale while advocating for animal rights through community awareness efforts."
+    }
+  ],
+  "projects": [
+    {
+      "img": "https://www.dropbox.com/scl/fi/540mpc9535q0032yc6kwp/femstem.png?rlkey=eqg3hrc828so5ipu9w8cxfmxi&st=rhc8nst6&dl=1",
+      "title": "FemSTEM",
+      "description": "An inclusive, tech-focused web community app for women and non-binaries that offers mentorship, hackathon team-finding, and accessible learning."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/tsvomqixeyj07q9dhooxu/workerbay.png?rlkey=l5dzyyjpbqbvxvm3yrkntyu2r&st=640urwlc&dl=1",
+      "title": "WorkerBay",
+      "description": "A Flutter-based mobile app connecting workers directly with customers for on-demand jobs, featuring smart filtering, scheduling, and mutual reviews."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/p0a230qfo5pk2qb4fx02m/learnlily.png?rlkey=gugc1ckrd1igvbjojf1jt0u8h&st=av2462k3&dl=1",
+      "title": "LearnLily",
+      "description": "An award-winning education portal enabling students to manage studies, collaborate via Q&A, and practice speaking with live, AI-powered feedback."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/gu55glm16ny0toxyc665a/covikind.png?rlkey=o11wajoa05q3i8qhorgpy5y17&st=t4kefkrx&dl=1",
+      "title": "Covikind",
+      "description": "An award-winning mental health platform offering safe spaces, meditation, and LocalStorage-backed journaling to help isolated users connect and recharge."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/80xqaxa2pnl3d6x9ai9uq/frontleads.png?rlkey=j72pz0iv0kmf3ufaenoqrbyxr&st=ydmpweco&dl=1",
+      "title": "Front Leads",
+      "description": "A community-driven Angular and Node.js web app to aggregate, verify, and filter COVID-19 resource leads, improving information reliability for volunteers."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/945t4b0lwcivefbpvp30x/wricreate.png?rlkey=h7ceua4w3ic1s5edr9cv4vmkr&st=5aivmjgj&dl=1",
+      "title": "WriCreate",
+      "description": "An immersive, game-like web app for creating stories and poems using interactive speech recognition, Web APIs, and TensorFlow-based gesture tracking."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/5387cdon3ngy46wa9mbqc/acender.png?rlkey=jnw8p1rmfztlge8c03fkwn0bv&st=4ipke5kv&dl=1",
+      "title": "Acender",
+      "description": "A safe online space for asexual individuals to find support groups and build community, featuring real-time peer chat rooms built with Socket.io."
+    },
+    {
+      "img": "https://www.dropbox.com/scl/fi/4wcfv476qqk71qnozzt6k/rhythmind.png?rlkey=cj3ge1yeu5u5txcg33q5n8cu2&st=tw34z4lf&dl=1",
+      "title": "rhythMind",
+      "description": "An award-winning, emotion-aware web app integrating the Spotify API and Azure chatbot to curate calming, personalized music and community listening rooms."
+    }
+  ]
+}
