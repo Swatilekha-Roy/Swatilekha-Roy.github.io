@@ -195,7 +195,7 @@ async function fetchJSON(url) {
 /* Helper: Render Block Items */
 function renderBlocks(items, container, sectionClass) {
   container.innerHTML = "";
-  (items || []).forEach((item) => {
+  items.forEach((item) => {
     const div = document.createElement("div");
     div.className = `col-12 col-md-6 wow fadeIn ${sectionClass}`;
 
@@ -233,7 +233,7 @@ async function renderCards(
   const cardElements = []; // To store fully constructed card DOM elements
   const imageLoadPromises = []; // To track image loading for each card
 
-  (items || []).forEach((item) => {
+  items.forEach((item) => {
     const col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 wow fadeIn";
 
@@ -309,8 +309,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!data) return;
       const workCon = document.getElementById("work-experience");
       const leadCon = document.getElementById("leadership-experience");
-      if (workCon) renderBlocks(data.work, workCon, "experience-section");
-      if (leadCon) renderBlocks(data.leadership, leadCon, "experience-section");
+      if (workCon && data.work)
+        renderBlocks(data.work, workCon, "experience-section");
+      if (leadCon && data.leadership)
+        renderBlocks(data.leadership, leadCon, "experience-section");
     })(),
     (async () => {
       const data = await fetchJSON("data/highlights.json");
@@ -319,7 +321,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const con = document.getElementById(`${key}-highlights`);
         if (con) {
           con.innerHTML = "";
-          (data[`${key}Highlights`] || []).forEach((item) => {
+          data[`${key}Highlights`].forEach((item) => {
             const li = document.createElement("li");
             li.innerHTML = `${item.text} - <em>${item.date}</em>`;
             con.appendChild(li);
@@ -332,8 +334,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!data) return;
       const volCon = document.getElementById("volunteer-impact");
       const proCon = document.getElementById("project-impact");
-      if (volCon) renderBlocks(data.volunteering, volCon, "volunteer-section");
-      if (proCon)
+      if (volCon && data.volunteering)
+        renderBlocks(data.volunteering, volCon, "volunteer-section");
+      if (proCon && data.projects)
         await renderCards(data.projects, proCon, "pro-card", "pro-card-body");
     })(),
     (async () => {
@@ -343,13 +346,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const filmCon = document.getElementById("onscreen-art");
       if (pubCon) {
         pubCon.innerHTML = "";
-        (data.publications || []).forEach((item) => {
+        data.publications.forEach((item) => {
           const li = document.createElement("li");
           li.innerHTML = `${item.text} - <em>${item.date}</em> ${item.link ? `<a href="${item.link}">Read here</a>` : ""}<br />`;
           pubCon.appendChild(li);
         });
       }
-      if (filmCon)
+      if (filmCon && data.film)
         await renderCards(
           data.film,
           filmCon,
