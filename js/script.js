@@ -243,6 +243,7 @@ async function renderCards(
     if (item.img) {
       const img = document.createElement("img"); // Create the actual img element for the DOM
       img.className = "card-img-top";
+      img.loading = "lazy";
       img.alt = item.title || "Image";
 
       const imgLoadPromise = new Promise((resolve) => {
