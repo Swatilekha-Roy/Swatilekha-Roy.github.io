@@ -475,6 +475,7 @@ footer {
     footer {
         margin-top: 3%;
         padding-bottom: 0;
+        font-size: 12px;
     }
 
     footer > span {
