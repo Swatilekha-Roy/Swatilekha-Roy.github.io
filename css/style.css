@@ -540,6 +540,8 @@ img.error_img {
     font-weight: 400;
     font-style: normal;
     text-align: left;
+    overflow: visible !important;
+    line-height: 1.3;
 }
 
 .name-home .char {
@@ -668,6 +670,10 @@ img.error_img {
         left: 0;
         width: 150px;
         opacity: 0.6;
+    }
+
+    .name-home .char {
+          padding-right: 0.02em;
     }
 }
 
