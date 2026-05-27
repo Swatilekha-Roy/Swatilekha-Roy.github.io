@@ -195,6 +195,7 @@ async function fetchJSON(url) {
 /* Helper: Render Block Items */
 function renderBlocks(items, container, sectionClass) {
   container.innerHTML = "";
+  const fragment = document.createDocumentFragment();
   items.forEach((item) => {
     const div = document.createElement("div");
     div.className = `col-12 col-md-6 wow fadeIn ${sectionClass}`;
@@ -216,8 +217,9 @@ function renderBlocks(items, container, sectionClass) {
         : item.description;
       div.appendChild(p);
     }
-    container.appendChild(div);
+    fragment.appendChild(div);
   });
+  container.appendChild(fragment);
 }
 
 /* Helper: Render Card Items */
@@ -382,10 +384,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+  // Initialize WOW before hiding the preloader to ensure elements are processed
+  if (typeof WOW !== "undefined") new WOW().init();
+
   preloaderReady = true;
   maybeHidePreloader();
-
-  if (typeof WOW !== "undefined") new WOW().init();
 
   // Initialize Intersection Observer to trigger header underlines on scroll
   const headerObserver = new IntersectionObserver(

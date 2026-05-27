@@ -216,6 +216,11 @@ quote {
 }
 
 
+/* Animation Utility: Prevent WOW.js flickering */
+.wow {
+    visibility: hidden;
+}
+
 /* Website Preloader */
 .pre-loader {
     background-color: #fafdff;
