@@ -21,12 +21,54 @@
       "date": "2018"
     },
     {
-      "text": "State Second Winner & International Olympiad Rank 16, IOEL (Silverzone)",
-      "date": "2016"
+        "text": "State Second Winner & International Olympiad Rank 16, IOEL (Silverzone)",
+        "date": "2016"
     },
     {
-      "text": "School Winner, Navneet Youva Master Stroke Contest",
-      "date": "2014"
+        "text": "School Winner, Navneet Youva Master Stroke Contest",
+        "date": "2014"
+    }
+  ],
+  "literaryHighlights": [
+    {
+      "text": "Featured Writer, Wordweavers Drabble Contest",
+      "date": "2021"
+    },
+    {
+      "text": "Winner, JGEC Pandulipi Inter College Writing Contest",
+      "date": "2020, 2021"
+    },
+    {
+      "text": "Winner, On Slam Poetry Contest (Esperanza)",
+      "date": "2019"
+    },
+    {
+      "text": "Sweek Pride Popular Badge, Sweek Pride Contest",
+      "date": "2018"
+    },
+    {
+        "text": "Winner, Eloquence Story Contest, Sweek",
+        "date": "2018"
+    },
+    {
+        "text": "Winner, Wordweavers Drabble Contest & Prose 300 Contest",
+        "date": "2018"
+    },
+    {
+        "text": "Finalist, Her Story Contest, Sweek",
+        "date": "2018"
+    },
+    {
+        "text": "Finalist, Two Categories, Sweek Stars Contest",
+        "date": "2018"
+    },
+    {
+        "text": "Longlisted, 'I Must Be Off' Annual Travel Story Writing Contest",
+        "date": "2018"
+    },
+    {
+        "text": "The Best Feedback Award, 'Micro Heart' Contest, Sweek",
+        "date": "2018"
     }
   ],
   "techHighlights": [
@@ -61,24 +103,10 @@
     {
       "text": "Top Finalist, PickHacks 2021",
       "date": "2021"
-    }
-  ],
-  "literaryHighlights": [
-    {
-      "text": "Featured Writer, Wordweavers Drabble Contest",
-      "date": "2021"
     },
     {
-      "text": "Winner, JGEC Pandulipi Inter College Writing Contest",
-      "date": "2020, 2021"
-    },
-    {
-      "text": "Winner, On Slam Poetry Contest (Esperanza)",
-      "date": "2019"
-    },
-    {
-      "text": "My story ‘Elizabeth’",
-      "date": "2018"
+      "text": "'Best Use of Azure for Social Good Sponsored by Microsoft' Winner, Athena Hacks 2021",
+      "date": "Mar, 2021"
     }
   ]
 }
