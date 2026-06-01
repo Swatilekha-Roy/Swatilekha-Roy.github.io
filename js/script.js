@@ -406,4 +406,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   document
     .querySelectorAll("h3")
     .forEach((header) => headerObserver.observe(header));
+
+  // Close mobile navbar when clicking outside
+  document.addEventListener("click", function (event) {
+    const navbarCollapse = document.getElementById("navbarNav");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    if (
+      navbarCollapse &&
+      navbarCollapse.classList.contains("show") &&
+      !navbarCollapse.contains(event.target) &&
+      !toggler.contains(event.target)
+    ) {
+      new bootstrap.Collapse(navbarCollapse).hide();
+    }
+  });
 });

@@ -216,11 +216,6 @@ quote {
 }
 
 
-/* Animation Utility: Prevent WOW.js flickering */
-.wow {
-    visibility: hidden;
-}
-
 /* Website Preloader */
 .pre-loader {
     background-color: #fafdff;
@@ -323,11 +318,11 @@ quote {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
-    opacity: 1;
+.nav-link:hover::after, .nav-link:focus::after, .nav-link:active::after, .nav-link.active::after {
+    animation: fadeIn 0.3s ease forwards;
 }
 
 .nav-link.active {
