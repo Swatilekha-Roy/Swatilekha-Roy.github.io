@@ -1183,6 +1183,26 @@ label {
   border-bottom-color: #6c5ce7; 
 }
 
+.substack-card {
+    background-color: #d1cdfe;
+    border: 1px solid #b1aaee !important;
+    border-radius: 15px;
+    box-shadow: 8px 10px 10px -6px rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 94%;
+    margin-top: 1rem;
+}
+
+.substack-card:hover {
+    transform: translateY(-5px);
+}
+
+.substack-card-body {
+    padding: 1.5rem;
+    text-align: left;
+}
+
 @media only screen and (max-width: 768px)
 {
     .contact-h {

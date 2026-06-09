@@ -287,7 +287,9 @@ async function renderCards(
       const btn = document.createElement("a");
       btn.href = item.link;
       btn.className = "btn btn-primary btn-sm btn-film";
-      btn.innerHTML = 'Watch <i class="fa-solid fa-play"></i>';
+      const btnText = item.btnText || "Watch";
+      const btnIcon = item.btnIcon || "fa-play";
+      btn.innerHTML = `${btnText} <i class="fa-solid ${btnIcon}"></i>`;
       body.appendChild(btn); // Append button
     }
 
@@ -362,6 +364,44 @@ document.addEventListener("DOMContentLoaded", async () => {
           "film-card-body",
           true,
         );
+    })(),
+    (async () => {
+      const substackCon = document.getElementById("substack-feed");
+      if (!substackCon) return;
+      try {
+        const rssUrl = "https://swatilekharoy.substack.com/feed";
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        const data = await fetchJSON(apiUrl);
+        if (data && data.status === "ok") {
+          const posts = data.items.slice(0, 3).map((item) => {
+            let img = item.thumbnail || (item.enclosure && item.enclosure.link);
+            if (!img && item.content) {
+              const match = item.content.match(/<img[^>]+src="([^">]+)"/);
+              img = match ? match[1] : "assets/logo.png";
+            }
+            const desc =
+              item.description.replace(/<[^>]*>?/gm, "").substring(0, 100) +
+              "...";
+            return {
+              title: item.title,
+              description: desc,
+              img: img || "assets/logo.png",
+              link: item.link,
+              btnText: "Read",
+              btnIcon: "fa-book-open"
+            };
+          });
+          await renderCards(
+            posts,
+            substackCon,
+            "substack-card",
+            "substack-card-body",
+            true,
+          );
+        }
+      } catch (err) {
+        console.error("Substack Feed error:", err);
+      }
     })(),
   ]);
 
