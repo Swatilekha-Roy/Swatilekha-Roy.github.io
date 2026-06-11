@@ -374,9 +374,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await fetchJSON(apiUrl);
         if (data && data.status === "ok") {
           const posts = data.items.slice(0, 3).map((item) => {
-            let img = item.thumbnail || (item.enclosure && item.enclosure.link);
-            if (!img && item.content) {
-              const match = item.content.match(/<img[^>]+src="([^">]+)"/);
+            // Prioritize the enclosure (Substack's cover/social image) over the thumbnail
+            let img = (item.enclosure && item.enclosure.link) || item.thumbnail;
+            if (!img) {
+              const match = (item.content || item.description || "").match(
+                /<img[^>]+src="([^">]+)"/,
+              );
               img = match ? match[1] : "assets/logo.png";
             }
             const desc =
@@ -388,7 +391,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               img: img || "assets/logo.png",
               link: item.link,
               btnText: "Read",
-              btnIcon: "fa-book-open"
+              btnIcon: "fa-book-open",
             };
           });
           await renderCards(
