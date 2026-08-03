@@ -369,8 +369,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       const substackCon = document.getElementById("substack-feed");
       if (!substackCon) return;
       try {
-        const rssUrl = "https://swatilekharoy.substack.com/feed";
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        // Adding a timestamp to the RSS URL forces rss2json to re-fetch from Substack (bypassing their 1-hour cache).
+        // Adding another to the apiUrl prevents the browser from using a cached JSON response.
+        const timestamp = Date.now();
+        const rssUrl = `https://swatilekharoy.substack.com/feed?t=${timestamp}`;
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&_=${timestamp}`;
         const data = await fetchJSON(apiUrl);
         if (data && data.status === "ok") {
           const posts = data.items.slice(0, 3).map((item) => {
