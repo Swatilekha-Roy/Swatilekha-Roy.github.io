@@ -287,7 +287,7 @@ async function renderCards(
       const btn = document.createElement("a");
       btn.href = item.link;
       btn.className = "btn btn-primary btn-sm btn-film";
-      const btnText = item.btnText || "Watch";
+      const btnText = item.btnText || "More";
       const btnIcon = item.btnIcon || "fa-play";
       btn.innerHTML = `${btnText} <i class="fa-solid ${btnIcon}"></i>`;
       body.appendChild(btn); // Append button
@@ -348,6 +348,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!data) return;
       const pubCon = document.querySelector(".publication-ul");
       const filmCon = document.getElementById("onscreen-art");
+      const homeCon = document.getElementById("homeeverywhere-art");
       if (pubCon) {
         pubCon.innerHTML = "";
         data.publications.forEach((item) => {
@@ -364,6 +365,61 @@ document.addEventListener("DOMContentLoaded", async () => {
           "film-card-body",
           true,
         );
+
+      // Render Home Everywhere films (thumbnail + title linking to video)
+      if (homeCon && data.homeeverywhere && data.homeeverywhere.length) {
+        homeCon.innerHTML = "";
+        data.homeeverywhere.forEach((item) => {
+          const col = document.createElement("div");
+          col.className = "col-12 col-sm-6 col-md-4 mb-3";
+
+          const card = document.createElement("div");
+          card.className = "card film-card";
+
+          // Thumbnail wrapped in link
+          const aImg = document.createElement("a");
+          aImg.href = item.link || "#";
+          aImg.target = "_blank";
+          aImg.rel = "noopener";
+
+          const img = document.createElement("img");
+          img.className = "card-img-top";
+          img.loading = "lazy";
+          img.alt = item.title || "Home Everywhere video";
+          img.src = item.img || "assets/logo.png";
+
+          aImg.appendChild(img);
+          card.appendChild(aImg);
+
+          const body = document.createElement("div");
+          body.className = "card-body film-card-body";
+          const h5 = document.createElement("h5");
+          h5.className = "card-title";
+          h5.textContent = item.title || "";
+          body.appendChild(h5);
+
+          if (item.description) {
+            const pdesc = document.createElement("p");
+            pdesc.className = "card-text";
+            pdesc.textContent = item.description;
+            body.appendChild(pdesc);
+          }
+
+          if (item.link) {
+            const btn = document.createElement("a");
+            btn.href = item.link;
+            btn.target = "_blank";
+            btn.rel = "noopener";
+            btn.className = "btn btn-primary btn-sm btn-film";
+            btn.innerHTML = `Watch <i class="fa-solid fa-play"></i>`;
+            body.appendChild(btn);
+          }
+
+          card.appendChild(body);
+          col.appendChild(card);
+          homeCon.appendChild(col);
+        });
+      }
     })(),
     (async () => {
       const substackCon = document.getElementById("substack-feed");

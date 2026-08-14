@@ -51,6 +51,16 @@ h3::after {
     clip-path: inset(0 100% 0 0);
 }
 
+.long-underline::after {
+    /* extend further left and increase width to make the underline longer */
+    left: -25% !important;
+    width: 150% !important;
+    height: 28px; /* slightly taller */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 50'%3E%3Cpath d='M10,25 C40,5 75,45 110,25 C145,5 180,45 215,25 C250,5 285,45 320,25 C355,5 390,45 425,25 C460,5 490,25 495,25' fill='none' stroke='%23f28bac' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 h3.visible::after {
     animation: reveal-underline 2s ease-in-out forwards;
 }
@@ -644,6 +654,24 @@ img.error_img {
     pointer-events: none; 
 }
 
+.btn-homeeverywhere {
+    float: left;
+    padding: 7px 1.5rem; 
+    margin-top: 0.5rem;
+    max-width: 250px;
+    margin-left: 20px;
+}
+
+.btn-homeeverywhere:hover,.btn-homeeverywhere:active,.btn-homeeverywherefocus {
+    box-shadow: 0 4px 12px rgba(205, 121, 32, 0.751) !important;
+}
+
+.center-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 1200px)
 {
     .homepage-img {
@@ -673,7 +701,13 @@ img.error_img {
     }
 
     .name-home .char {
-          padding-right: 0.02em;
+        padding-right: 0.02em;
+    }
+
+    .btn-homeeverywhere {
+        float: none;
+        display: block;
+        margin: 0.5rem auto;
     }
 }
 
@@ -865,6 +899,13 @@ img.error_img {
 
 .first-poem > img:hover {
     transform: rotate(0deg) scale(1.02);
+}
+
+.homeeverywherebase {
+    width: 250px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 1.1rem;
 }
 
 @media only screen and (max-width: 1200px)
