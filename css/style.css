@@ -908,6 +908,10 @@ img.error_img {
     margin-top: 1.1rem;
 }
 
+#homeeverywhere-art p {
+    margin-top: 0.8rem;
+}
+
 @media only screen and (max-width: 1200px)
 {
     .retrospective-section > img {

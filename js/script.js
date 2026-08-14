@@ -393,10 +393,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           const body = document.createElement("div");
           body.className = "card-body film-card-body";
+
+          // Header row: title (heading) on the left, year (italic normal text) on the right
+          const headerRow = document.createElement("div");
+          headerRow.className =
+            "d-flex justify-content-between align-items-center";
+
           const h5 = document.createElement("h5");
-          h5.className = "card-title";
+          h5.className = "card-title mb-0";
           h5.textContent = item.title || "";
-          body.appendChild(h5);
+          headerRow.appendChild(h5);
+
+          if (item.year) {
+            const yearWrap = document.createElement("span");
+            const yearEm = document.createElement("em");
+            yearEm.textContent = item.year;
+            yearWrap.appendChild(yearEm);
+            headerRow.appendChild(yearWrap);
+          }
+
+          body.appendChild(headerRow);
 
           if (item.description) {
             const pdesc = document.createElement("p");
