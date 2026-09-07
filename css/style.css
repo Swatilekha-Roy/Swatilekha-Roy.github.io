@@ -182,7 +182,7 @@ quote {
 
 /* Top Content Responsiveness */
 .top-con {
-    margin-top: 3%;
+    margin-top: 9%;
 }
 
 @media screen and (max-width: 1200px)
@@ -195,7 +195,7 @@ quote {
 @media screen and (max-width: 600px)
 {
     .top-con {
-        margin-top: 13%;
+        margin-top: 25%;
     }
 } 
 
