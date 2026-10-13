@@ -1,30 +1,12 @@
 {
   "volunteering": [
     {
-      "title": "Speaker, Mentor, Scholar Reviewer, Moderator - AnitaB.org",
-      "date": "Since Jul 2021",
-      "description": [
-        "‣ Invited as a GHC 2026 Speaker for the session “Off-Script: Make Impact Your Main Track”, after years of continued involvement across the community.",
-        "‣ Served across multiple leadership and support roles.",
-        "‣ Leadership Track: vGHC’21 Scholar → vGHC’21 Moderator → GHC’23 Scholar Reviewer → Mentor → GHCI’24 Scholar → GHCI’25 Ambassador & Volunteer Co-Lead → GHC’26 Speaker"
-      ]
-    },
-    {
       "title": "Ambassador, Volunteer Co-lead - AnitaB.org India",
       "date": "Since Oct 2025",
       "description": [
         "‣ Served as a Grace Hopper Celebration India Ambassador, driving awareness and participation across diverse student and professional communities.",
         "‣ Recognized as Top Ambassador for GHCI 2025, leading the leaderboard with 65 verified missions completed.",
         "‣ Served as GHCI Volunteer Co-Lead, supporting 100+ volunteers and helping execute a 6,000+ attendee conference with 350+ speakers."
-      ]
-    },
-    {
-      "title": "Mentor - Rewriting the Code",
-      "date": "Since Jun 2024",
-      "description": [
-        "‣ Mentored community members through regular 1:1 coffee chats and career guidance sessions.",
-        "‣ Conducted live résumé review and interview prep workshops for students and early-career professionals.",
-        "‣ Led mentoring circles on conference prep, interviews, and career growth, and was recognized as a Top Mentor for 2025."
       ]
     },
     {
@@ -35,6 +17,24 @@
         "‣ Built a community-driven initiative rooted in mentorship, gratitude, and giving back."
       ]
     },
+    {
+      "title": "Mentor, Scholar Reviewer, Moderator - AnitaB.org",
+      "date": "Jul 2021 - Oct 2026",
+      "description": [
+        "‣ Invited as a GHC 2026 Speaker for the session “Off-Script: Make Impact Your Main Track”, after years of continued involvement across the community.",
+        "‣ Served across multiple leadership and support roles.",
+        "‣ Leadership Track: vGHC’21 Scholar → vGHC’21 Moderator → GHC’23 Scholar Reviewer → Mentor → GHCI’24 Scholar → GHCI’25 Ambassador & Volunteer Co-Lead → GHC’26 Speaker"
+      ]
+    },
+    {
+      "title": "Mentor - Rewriting the Code",
+      "date": "Jun 2024 - Sep 2026",
+      "description": [
+        "‣ Mentored community members through regular 1:1 coffee chats and career guidance sessions.",
+        "‣ Conducted live résumé review and interview prep workshops for students and early-career professionals.",
+        "‣ Led mentoring circles on conference prep, interviews, and career growth, and was recognized as a Top Mentor for 2025."
+      ]
+    },  
     {
       "title": "Curriculum Reviewer - Code.org",
       "date": "Feb - May 2024",
